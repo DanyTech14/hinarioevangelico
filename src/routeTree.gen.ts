@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjetorLanguageNumberRouteImport } from './routes/projetor.$language.$number'
 import { Route as HinoLanguageNumberRouteImport } from './routes/hino.$language.$number'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetorLanguageNumberRoute = ProjetorLanguageNumberRouteImport.update({
+  id: '/projetor/$language/$number',
+  path: '/projetor/$language/$number',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
@@ -26,27 +32,35 @@ const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
+  '/projetor/$language/$number': typeof ProjetorLanguageNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
+  '/projetor/$language/$number': typeof ProjetorLanguageNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
+  '/projetor/$language/$number': typeof ProjetorLanguageNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hino/$language/$number'
+  fullPaths: '/' | '/hino/$language/$number' | '/projetor/$language/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/hino/$language/$number'
-  id: '__root__' | '/' | '/hino/$language/$number'
+  to: '/' | '/hino/$language/$number' | '/projetor/$language/$number'
+  id:
+    | '__root__'
+    | '/'
+    | '/hino/$language/$number'
+    | '/projetor/$language/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   HinoLanguageNumberRoute: typeof HinoLanguageNumberRoute
+  ProjetorLanguageNumberRoute: typeof ProjetorLanguageNumberRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -56,6 +70,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projetor/$language/$number': {
+      id: '/projetor/$language/$number'
+      path: '/projetor/$language/$number'
+      fullPath: '/projetor/$language/$number'
+      preLoaderRoute: typeof ProjetorLanguageNumberRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hino/$language/$number': {
@@ -71,7 +92,18 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   HinoLanguageNumberRoute: HinoLanguageNumberRoute,
+  ProjetorLanguageNumberRoute: ProjetorLanguageNumberRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
