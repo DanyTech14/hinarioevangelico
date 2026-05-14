@@ -36,3 +36,26 @@ export function searchHymns(query: string, language?: string): Hymn[] {
   );
   return [...numMatch, ...rest];
 }
+
+export function hymnToShareText(h: Hymn): string {
+  const header = `*${h.number}. ${h.title}*` + (h.category ? ` _(${h.category})_` : "");
+  return `${header}\n\n${h.body.trim()}\n\n— Hinário Evangélico (${h.language})`;
+}
+
+export function shareHymn(h: Hymn): void {
+  const text = hymnToShareText(h);
+  // Try native share first (mobile)
+  const nav = typeof navigator !== "undefined" ? navigator : undefined;
+  if (nav && typeof nav.share === "function") {
+    nav
+      .share({ title: `Hino ${h.number} — ${h.title}`, text })
+      .catch(() => openWhatsApp(text));
+    return;
+  }
+  openWhatsApp(text);
+}
+
+function openWhatsApp(text: string) {
+  const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+  if (typeof window !== "undefined") window.open(url, "_blank", "noopener,noreferrer");
+}
