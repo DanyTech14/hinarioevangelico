@@ -149,14 +149,23 @@ function ProjectorPage() {
               )}
             </div>
           ) : (
-            <div>
-              {slide.number && (
+            <div className={slide.kind === "chorus" ? "italic" : undefined}>
+              {slide.kind === "chorus" ? (
                 <div
-                  className="mb-[0.5em] font-semibold"
-                  style={{ fontSize: `${baseSize * 0.55 * scale}vw`, color: t.muted }}
+                  className="mb-[0.5em] font-semibold uppercase tracking-[0.3em] not-italic"
+                  style={{ fontSize: `${baseSize * 0.4 * scale}vw`, color: t.muted }}
                 >
-                  Estrofe {slide.number}
+                  ✦ Coro ✦
                 </div>
+              ) : (
+                slide.number && (
+                  <div
+                    className="mb-[0.5em] font-semibold"
+                    style={{ fontSize: `${baseSize * 0.55 * scale}vw`, color: t.muted }}
+                  >
+                    Estrofe {slide.number}
+                  </div>
+                )
               )}
               {slide.lines.map((l, i) => (
                 <div key={i}>{l}</div>
