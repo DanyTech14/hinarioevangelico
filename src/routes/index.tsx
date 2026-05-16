@@ -50,44 +50,47 @@ function Home() {
         </div>
       </header>
 
-      <section className="mx-auto max-w-6xl px-4 pt-12 pb-8 text-center">
-        <p className="uppercase tracking-[0.25em] text-xs text-accent-foreground/80 font-semibold mb-3">
+      <section className="mx-auto max-w-6xl px-4 pt-8 sm:pt-12 pb-6 sm:pb-8 text-center">
+        <p className="uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[10px] sm:text-xs text-accent-foreground/80 font-semibold mb-3">
           Hinário Evangélico Completo
         </p>
-        <h1 className="font-display text-5xl md:text-6xl font-semibold leading-[1.05]">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] sm:leading-[1.05] text-balance">
           Cante com a congregação,
           <br />
           <span className="italic text-primary">em qualquer momento do culto.</span>
         </h1>
-        <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
+        <p className="mt-4 sm:mt-5 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
           {HYMNS.length} hinos em {LANGUAGES.length} línguas. Pesquise por número, título ou letra
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
 
-        <div className="mt-8 max-w-2xl mx-auto">
+        <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <Input
-              autoFocus
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Procurar hino: número, título ou trecho da letra…"
-              className="h-14 pl-12 pr-4 text-lg rounded-xl border-2 bg-card shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
+              placeholder="Procurar: número, título ou letra…"
+              inputMode="search"
+              enterKeyHint="search"
+              className="h-12 sm:h-14 pl-12 pr-4 text-base sm:text-lg rounded-xl border-2 bg-card shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
             />
           </div>
 
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
-            {["Todos", ...LANGUAGES].map((l) => (
-              <Button
-                key={l}
-                variant={lang === l ? "default" : "outline"}
-                size="sm"
-                onClick={() => setLang(l)}
-                className="rounded-full"
-              >
-                {l}
-              </Button>
-            ))}
+          <div className="mt-4 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
+            <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
+              {["Todos", ...LANGUAGES].map((l) => (
+                <Button
+                  key={l}
+                  variant={lang === l ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setLang(l)}
+                  className="rounded-full shrink-0"
+                >
+                  {l}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
