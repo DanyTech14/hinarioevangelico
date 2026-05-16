@@ -64,10 +64,10 @@ function HymnPage() {
     <div className="min-h-screen flex flex-col">
       {!focus && (
         <header className="sticky top-0 z-30 backdrop-blur-md bg-background/80 border-b border-border">
-          <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-2">
+          <div className="mx-auto max-w-5xl px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-1 sm:gap-2">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <Home className="h-4 w-4" /> Início
+              <Button variant="ghost" size="sm" className="gap-2 px-2 sm:px-3">
+                <Home className="h-4 w-4" /> <span className="hidden xs:inline sm:inline">Início</span>
               </Button>
             </Link>
             <div className="flex items-center gap-1">
