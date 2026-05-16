@@ -296,28 +296,3 @@ function toggleFullscreen() {
   }
 }
 
-function parseStanzas(body: string): { number: string | null; lines: string[] }[] {
-  const lines = body.split("\n");
-  const stanzas: { number: string | null; lines: string[] }[] = [];
-  let current: { number: string | null; lines: string[] } | null = null;
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (!line) {
-      if (current && current.lines.length) {
-        stanzas.push(current);
-        current = null;
-      }
-      continue;
-    }
-    const m = /^(\d+)\.\s*(.*)$/.exec(line);
-    if (m) {
-      if (current) stanzas.push(current);
-      current = { number: m[1], lines: m[2] ? [m[2]] : [] };
-    } else {
-      if (!current) current = { number: null, lines: [] };
-      current.lines.push(line);
-    }
-  }
-  if (current) stanzas.push(current);
-  return stanzas;
-}
