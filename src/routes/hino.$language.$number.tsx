@@ -153,21 +153,38 @@ function HymnPage() {
           className="font-display leading-relaxed text-foreground space-y-6 text-balance"
           style={{ fontSize: `${size}px`, lineHeight: 1.45 }}
         >
-          {stanzas.map((st, i) => (
-            <div key={i} className="relative">
-              {st.number && (
+          {stanzas.map((st, i) =>
+            st.kind === "chorus" ? (
+              <div
+                key={i}
+                className="relative italic rounded-r-lg border-l-4 border-primary bg-primary/5 pl-5 pr-3 py-3 -ml-2"
+              >
                 <span
-                  className="absolute -left-10 md:-left-12 top-0 font-semibold text-primary/60 select-none"
-                  style={{ fontSize: `${Math.max(14, size * 0.7)}px` }}
+                  className="block uppercase tracking-[0.25em] font-sans not-italic font-semibold text-primary mb-2"
+                  style={{ fontSize: `${Math.max(11, size * 0.45)}px` }}
                 >
-                  {st.number}
+                  Coro
                 </span>
-              )}
-              {st.lines.map((l, j) => (
-                <div key={j}>{l}</div>
-              ))}
-            </div>
-          ))}
+                {st.lines.map((l, j) => (
+                  <div key={j}>{l}</div>
+                ))}
+              </div>
+            ) : (
+              <div key={i} className="relative">
+                {st.number && (
+                  <span
+                    className="absolute -left-10 md:-left-12 top-0 font-semibold text-primary/60 select-none"
+                    style={{ fontSize: `${Math.max(14, size * 0.7)}px` }}
+                  >
+                    {st.number}
+                  </span>
+                )}
+                {st.lines.map((l, j) => (
+                  <div key={j}>{l}</div>
+                ))}
+              </div>
+            ),
+          )}
         </article>
 
         <nav className="mt-16 flex items-center justify-between gap-3 border-t border-border pt-6">
@@ -209,10 +226,16 @@ function HymnPage() {
   );
 }
 
-function parseStanzas(body: string): { number: string | null; lines: string[] }[] {
+export type Stanza = {
+  kind: "verse" | "chorus";
+  number: string | null;
+  lines: string[];
+};
+
+export function parseStanzas(body: string): Stanza[] {
   const lines = body.split("\n");
-  const stanzas: { number: string | null; lines: string[] }[] = [];
-  let current: { number: string | null; lines: string[] } | null = null;
+  const stanzas: Stanza[] = [];
+  let current: Stanza | null = null;
   for (const raw of lines) {
     const line = raw.trim();
     if (!line) {
@@ -222,12 +245,16 @@ function parseStanzas(body: string): { number: string | null; lines: string[] }[
       }
       continue;
     }
+    const chorus = /^coro\s*:?\s*(.*)$/i.exec(line);
     const m = /^(\d+)\.\s*(.*)$/.exec(line);
-    if (m) {
+    if (chorus) {
       if (current) stanzas.push(current);
-      current = { number: m[1], lines: m[2] ? [m[2]] : [] };
+      current = { kind: "chorus", number: null, lines: chorus[1] ? [chorus[1]] : [] };
+    } else if (m) {
+      if (current) stanzas.push(current);
+      current = { kind: "verse", number: m[1], lines: m[2] ? [m[2]] : [] };
     } else {
-      if (!current) current = { number: null, lines: [] };
+      if (!current) current = { kind: "verse", number: null, lines: [] };
       current.lines.push(line);
     }
   }

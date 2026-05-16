@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-ro
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, X, Maximize, Type, Palette } from "lucide-react";
 import { findHymn, HYMNS } from "@/lib/hymns";
+import { parseStanzas } from "./hino.$language.$number";
 
 export const Route = createFileRoute("/projetor/$language/$number")({
   loader: ({ params }) => {
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/projetor/$language/$number")({
   ),
 });
 
-type Slide = { kind: "title" | "stanza"; number?: string | null; lines: string[] };
+type Slide = { kind: "title" | "verse" | "chorus"; number?: string | null; lines: string[] };
 
 const THEMES = [
   { bg: "#000000", fg: "#ffffff", muted: "#9ca3af" },
@@ -37,7 +38,10 @@ function ProjectorPage() {
 
   const slides = useMemo<Slide[]>(() => {
     const stanzas = parseStanzas(hymn.body);
-    return [{ kind: "title", lines: [hymn.title] }, ...stanzas.map((s) => ({ kind: "stanza" as const, ...s }))];
+    return [
+      { kind: "title", lines: [hymn.title] },
+      ...stanzas.map((s) => ({ kind: s.kind, number: s.number, lines: s.lines })),
+    ];
   }, [hymn]);
 
   const [idx, setIdx] = useState(0);
@@ -145,14 +149,23 @@ function ProjectorPage() {
               )}
             </div>
           ) : (
-            <div>
-              {slide.number && (
+            <div className={slide.kind === "chorus" ? "italic" : undefined}>
+              {slide.kind === "chorus" ? (
                 <div
-                  className="mb-[0.5em] font-semibold"
-                  style={{ fontSize: `${baseSize * 0.55 * scale}vw`, color: t.muted }}
+                  className="mb-[0.5em] font-semibold uppercase tracking-[0.3em] not-italic"
+                  style={{ fontSize: `${baseSize * 0.4 * scale}vw`, color: t.muted }}
                 >
-                  Estrofe {slide.number}
+                  ✦ Coro ✦
                 </div>
+              ) : (
+                slide.number && (
+                  <div
+                    className="mb-[0.5em] font-semibold"
+                    style={{ fontSize: `${baseSize * 0.55 * scale}vw`, color: t.muted }}
+                  >
+                    Estrofe {slide.number}
+                  </div>
+                )
               )}
               {slide.lines.map((l, i) => (
                 <div key={i}>{l}</div>
@@ -295,28 +308,3 @@ function toggleFullscreen() {
   }
 }
 
-function parseStanzas(body: string): { number: string | null; lines: string[] }[] {
-  const lines = body.split("\n");
-  const stanzas: { number: string | null; lines: string[] }[] = [];
-  let current: { number: string | null; lines: string[] } | null = null;
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (!line) {
-      if (current && current.lines.length) {
-        stanzas.push(current);
-        current = null;
-      }
-      continue;
-    }
-    const m = /^(\d+)\.\s*(.*)$/.exec(line);
-    if (m) {
-      if (current) stanzas.push(current);
-      current = { number: m[1], lines: m[2] ? [m[2]] : [] };
-    } else {
-      if (!current) current = { number: null, lines: [] };
-      current.lines.push(line);
-    }
-  }
-  if (current) stanzas.push(current);
-  return stanzas;
-}

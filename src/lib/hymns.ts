@@ -39,7 +39,10 @@ export function searchHymns(query: string, language?: string): Hymn[] {
 
 export function hymnToShareText(h: Hymn): string {
   const header = `*${h.number}. ${h.title}*` + (h.category ? ` _(${h.category})_` : "");
-  return `${header}\n\n${h.body.trim()}\n\n— Hinário Evangélico (${h.language})`;
+  const body = h.body
+    .trim()
+    .replace(/^Coro:\s*$/gim, "_*Coro:*_");
+  return `${header}\n\n${body}\n\n— Hinário Evangélico (${h.language})`;
 }
 
 export function shareHymn(h: Hymn): void {
