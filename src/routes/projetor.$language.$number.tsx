@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-ro
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, X, Maximize, Type, Palette } from "lucide-react";
 import { findHymn, HYMNS } from "@/lib/hymns";
+import { parseStanzas } from "./hino.$language.$number";
 
 export const Route = createFileRoute("/projetor/$language/$number")({
   loader: ({ params }) => {
