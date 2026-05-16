@@ -153,21 +153,38 @@ function HymnPage() {
           className="font-display leading-relaxed text-foreground space-y-6 text-balance"
           style={{ fontSize: `${size}px`, lineHeight: 1.45 }}
         >
-          {stanzas.map((st, i) => (
-            <div key={i} className="relative">
-              {st.number && (
+          {stanzas.map((st, i) =>
+            st.kind === "chorus" ? (
+              <div
+                key={i}
+                className="relative italic rounded-r-lg border-l-4 border-primary bg-primary/5 pl-5 pr-3 py-3 -ml-2"
+              >
                 <span
-                  className="absolute -left-10 md:-left-12 top-0 font-semibold text-primary/60 select-none"
-                  style={{ fontSize: `${Math.max(14, size * 0.7)}px` }}
+                  className="block uppercase tracking-[0.25em] font-sans not-italic font-semibold text-primary mb-2"
+                  style={{ fontSize: `${Math.max(11, size * 0.45)}px` }}
                 >
-                  {st.number}
+                  Coro
                 </span>
-              )}
-              {st.lines.map((l, j) => (
-                <div key={j}>{l}</div>
-              ))}
-            </div>
-          ))}
+                {st.lines.map((l, j) => (
+                  <div key={j}>{l}</div>
+                ))}
+              </div>
+            ) : (
+              <div key={i} className="relative">
+                {st.number && (
+                  <span
+                    className="absolute -left-10 md:-left-12 top-0 font-semibold text-primary/60 select-none"
+                    style={{ fontSize: `${Math.max(14, size * 0.7)}px` }}
+                  >
+                    {st.number}
+                  </span>
+                )}
+                {st.lines.map((l, j) => (
+                  <div key={j}>{l}</div>
+                ))}
+              </div>
+            ),
+          )}
         </article>
 
         <nav className="mt-16 flex items-center justify-between gap-3 border-t border-border pt-6">
