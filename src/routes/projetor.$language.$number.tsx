@@ -23,7 +23,7 @@ export const Route = createFileRoute("/projetor/$language/$number")({
   ),
 });
 
-type Slide = { kind: "title" | "stanza"; number?: string | null; lines: string[] };
+type Slide = { kind: "title" | "verse" | "chorus"; number?: string | null; lines: string[] };
 
 const THEMES = [
   { bg: "#000000", fg: "#ffffff", muted: "#9ca3af" },
@@ -38,7 +38,10 @@ function ProjectorPage() {
 
   const slides = useMemo<Slide[]>(() => {
     const stanzas = parseStanzas(hymn.body);
-    return [{ kind: "title", lines: [hymn.title] }, ...stanzas.map((s) => ({ kind: "stanza" as const, ...s }))];
+    return [
+      { kind: "title", lines: [hymn.title] },
+      ...stanzas.map((s) => ({ kind: s.kind, number: s.number, lines: s.lines })),
+    ];
   }, [hymn]);
 
   const [idx, setIdx] = useState(0);
