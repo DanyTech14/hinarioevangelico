@@ -4,6 +4,7 @@ import { Search, BookOpen, Music } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { InstallPrompt } from "@/components/InstallPrompt";
 import { HYMNS, LANGUAGES, searchHymns } from "@/lib/hymns";
 
 export const Route = createFileRoute("/")({
