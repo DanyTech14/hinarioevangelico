@@ -142,6 +142,8 @@ function Home() {
       <footer className="border-t border-border py-6 text-center text-xs text-muted-foreground">
         Hinário Evangélico — Igreja Evangélica Congregacional em Angola (6ª edição)
       </footer>
+
+      <InstallPrompt />
     </div>
   );
 }
