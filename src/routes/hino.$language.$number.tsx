@@ -226,10 +226,16 @@ function HymnPage() {
   );
 }
 
-function parseStanzas(body: string): { number: string | null; lines: string[] }[] {
+export type Stanza = {
+  kind: "verse" | "chorus";
+  number: string | null;
+  lines: string[];
+};
+
+export function parseStanzas(body: string): Stanza[] {
   const lines = body.split("\n");
-  const stanzas: { number: string | null; lines: string[] }[] = [];
-  let current: { number: string | null; lines: string[] } | null = null;
+  const stanzas: Stanza[] = [];
+  let current: Stanza | null = null;
   for (const raw of lines) {
     const line = raw.trim();
     if (!line) {
@@ -239,12 +245,16 @@ function parseStanzas(body: string): { number: string | null; lines: string[] }[
       }
       continue;
     }
+    const chorus = /^coro\s*:?\s*(.*)$/i.exec(line);
     const m = /^(\d+)\.\s*(.*)$/.exec(line);
-    if (m) {
+    if (chorus) {
       if (current) stanzas.push(current);
-      current = { number: m[1], lines: m[2] ? [m[2]] : [] };
+      current = { kind: "chorus", number: null, lines: chorus[1] ? [chorus[1]] : [] };
+    } else if (m) {
+      if (current) stanzas.push(current);
+      current = { kind: "verse", number: m[1], lines: m[2] ? [m[2]] : [] };
     } else {
-      if (!current) current = { number: null, lines: [] };
+      if (!current) current = { kind: "verse", number: null, lines: [] };
       current.lines.push(line);
     }
   }
