@@ -85,6 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
       { name: "apple-mobile-web-app-title", content: "Hinário" },
+      { property: "og:title", content: "Hinário Evangélico — Cantar em comunhão" },
+      { name: "twitter:title", content: "Hinário Evangélico — Cantar em comunhão" },
+      { name: "description", content: "Canto Fácil provides easy, organized access to hymns for worship services, usable offline." },
+      { property: "og:description", content: "Canto Fácil provides easy, organized access to hymns for worship services, usable offline." },
+      { name: "twitter:description", content: "Canto Fácil provides easy, organized access to hymns for worship services, usable offline." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f58d7a8-91ab-4935-9dcb-f3cc486ac425/id-preview-bcbe85c8--059b09ce-0bb0-4568-a2ef-7ea34d83ef96.lovable.app-1778920388122.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8f58d7a8-91ab-4935-9dcb-f3cc486ac425/id-preview-bcbe85c8--059b09ce-0bb0-4568-a2ef-7ea34d83ef96.lovable.app-1778920388122.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
