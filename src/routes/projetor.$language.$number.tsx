@@ -38,10 +38,20 @@ function ProjectorPage() {
 
   const slides = useMemo<Slide[]>(() => {
     const stanzas = parseStanzas(hymn.body);
-    return [
-      { kind: "title", lines: [hymn.title] },
-      ...stanzas.map((s) => ({ kind: s.kind, number: s.number, lines: s.lines })),
-    ];
+    const chorus = stanzas.find((s) => s.kind === "chorus");
+    const out: Slide[] = [{ kind: "title", lines: [hymn.title] }];
+    for (const s of stanzas) {
+      if (s.kind === "chorus") continue;
+      out.push({ kind: s.kind, number: s.number, lines: s.lines });
+      if (chorus) {
+        out.push({ kind: "chorus", number: null, lines: chorus.lines });
+      }
+    }
+    // If hymn has no verses but has a chorus, still show it
+    if (out.length === 1 && chorus) {
+      out.push({ kind: "chorus", number: null, lines: chorus.lines });
+    }
+    return out;
   }, [hymn]);
 
   const [idx, setIdx] = useState(0);
