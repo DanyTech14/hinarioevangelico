@@ -87,6 +87,16 @@ function Home() {
 
           <div className="mt-4 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
+              <Button
+                variant={onlyFavs ? "default" : "outline"}
+                size="sm"
+                onClick={() => setOnlyFavs((v) => !v)}
+                className="rounded-full shrink-0 gap-1.5"
+                aria-pressed={onlyFavs}
+              >
+                <Star className={`h-3.5 w-3.5 ${onlyFavs ? "fill-current" : ""}`} />
+                Favoritos{favIds.length > 0 ? ` (${favIds.length})` : ""}
+              </Button>
               {["Todos", ...LANGUAGES].map((l) => (
                 <Button
                   key={l}
