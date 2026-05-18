@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, BookOpen, Music } from "lucide-react";
+import { Search, BookOpen, Music, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { HYMNS, LANGUAGES, searchHymns } from "@/lib/hymns";
+import { useFavorites, favId } from "@/lib/favorites";
 
 export const Route = createFileRoute("/")({
   head: () => ({
