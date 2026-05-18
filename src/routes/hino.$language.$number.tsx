@@ -1,9 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, MonitorPlay } from "lucide-react";
+import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, MonitorPlay, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { HYMNS, findHymn, shareHymn } from "@/lib/hymns";
+import { useFavorites } from "@/lib/favorites";
 
 export const Route = createFileRoute("/hino/$language/$number")({
   loader: ({ params }) => {
