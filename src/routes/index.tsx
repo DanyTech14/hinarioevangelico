@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, BookOpen, Music } from "lucide-react";
+import { Search, BookOpen, Music, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { HYMNS, LANGUAGES, searchHymns } from "@/lib/hymns";
+import { useFavorites, favId } from "@/lib/favorites";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,8 +30,15 @@ export const Route = createFileRoute("/")({
 function Home() {
   const [query, setQuery] = useState("");
   const [lang, setLang] = useState<string>("Português");
+  const [onlyFavs, setOnlyFavs] = useState(false);
+  const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
 
-  const results = useMemo(() => searchHymns(query, lang), [query, lang]);
+  const results = useMemo(() => {
+    const base = searchHymns(query, lang);
+    if (!onlyFavs) return base;
+    const set = new Set(favIds);
+    return base.filter((h) => set.has(favId(h.language, h.number)));
+  }, [query, lang, onlyFavs, favIds]);
   const visible = results.slice(0, 200);
 
   return (
@@ -79,6 +87,16 @@ function Home() {
 
           <div className="mt-4 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
+              <Button
+                variant={onlyFavs ? "default" : "outline"}
+                size="sm"
+                onClick={() => setOnlyFavs((v) => !v)}
+                className="rounded-full shrink-0 gap-1.5"
+                aria-pressed={onlyFavs}
+              >
+                <Star className={`h-3.5 w-3.5 ${onlyFavs ? "fill-current" : ""}`} />
+                Favoritos{favIds.length > 0 ? ` (${favIds.length})` : ""}
+              </Button>
               {["Todos", ...LANGUAGES].map((l) => (
                 <Button
                   key={l}
@@ -110,31 +128,53 @@ function Home() {
 
         {visible.length === 0 ? (
           <div className="text-center py-20 text-muted-foreground">
-            Nenhum hino encontrado.
+            {onlyFavs && favIds.length === 0
+              ? "Ainda não tem favoritos. Abra um hino e toque na ⭐ para guardar."
+              : "Nenhum hino encontrado."}
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {visible.map((h) => (
-              <Link
-                key={`${h.language}-${h.number}`}
-                to="/hino/$language/$number"
-                params={{ language: h.language, number: h.number }}
-                className="group rounded-lg border border-border bg-card hover:border-primary hover:shadow-md transition-all p-4 flex items-start gap-3"
-              >
-                <div className="shrink-0 h-12 w-12 rounded-md bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  {h.number}
+            {visible.map((h) => {
+              const fav = isFavorite(h.language, h.number);
+              return (
+                <div
+                  key={`${h.language}-${h.number}`}
+                  className="group relative rounded-lg border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+                >
+                  <Link
+                    to="/hino/$language/$number"
+                    params={{ language: h.language, number: h.number }}
+                    className="p-4 pr-12 flex items-start gap-3"
+                  >
+                    <div className="shrink-0 h-12 w-12 rounded-md bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                      {h.number}
+                    </div>
+                    <div className="min-w-0">
+                      {h.category && (
+                        <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate">
+                          {h.category}
+                        </p>
+                      )}
+                      <p className="font-display text-lg leading-snug truncate">{h.title}</p>
+                      <p className="text-xs text-muted-foreground">{h.language}</p>
+                    </div>
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleFav(h.language, h.number);
+                    }}
+                    aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                    aria-pressed={fav}
+                    className="absolute top-2 right-2 h-9 w-9 grid place-items-center rounded-md hover:bg-accent transition-colors"
+                  >
+                    <Star className={`h-4 w-4 ${fav ? "fill-primary text-primary" : "text-muted-foreground"}`} />
+                  </button>
                 </div>
-                <div className="min-w-0">
-                  {h.category && (
-                    <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate">
-                      {h.category}
-                    </p>
-                  )}
-                  <p className="font-display text-lg leading-snug truncate">{h.title}</p>
-                  <p className="text-xs text-muted-foreground">{h.language}</p>
-                </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
         )}
       </section>

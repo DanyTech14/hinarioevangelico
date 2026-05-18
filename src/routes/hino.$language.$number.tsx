@@ -1,9 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, MonitorPlay } from "lucide-react";
+import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, MonitorPlay, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { HYMNS, findHymn, shareHymn } from "@/lib/hymns";
+import { useFavorites } from "@/lib/favorites";
 
 export const Route = createFileRoute("/hino/$language/$number")({
   loader: ({ params }) => {
@@ -44,6 +45,8 @@ function HymnPage() {
     return v ? parseInt(v) : 28;
   });
   const [focus, setFocus] = useState(false);
+  const { isFavorite, toggle: toggleFav } = useFavorites();
+  const fav = isFavorite(hymn.language, hymn.number);
 
   useEffect(() => {
     localStorage.setItem("hymn-size", String(size));
@@ -89,6 +92,16 @@ function HymnPage() {
                 aria-label="Aumentar texto"
               >
                 <Plus className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => toggleFav(hymn.language, hymn.number)}
+                aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                aria-pressed={fav}
+                className="ml-1"
+              >
+                <Star className={`h-4 w-4 ${fav ? "fill-primary text-primary" : ""}`} />
               </Button>
               <Button
                 variant="outline"
