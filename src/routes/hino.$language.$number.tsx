@@ -45,6 +45,8 @@ function HymnPage() {
     return v ? parseInt(v) : 28;
   });
   const [focus, setFocus] = useState(false);
+  const { isFavorite, toggle: toggleFav } = useFavorites();
+  const fav = isFavorite(hymn.language, hymn.number);
 
   useEffect(() => {
     localStorage.setItem("hymn-size", String(size));
