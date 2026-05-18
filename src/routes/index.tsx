@@ -30,8 +30,15 @@ export const Route = createFileRoute("/")({
 function Home() {
   const [query, setQuery] = useState("");
   const [lang, setLang] = useState<string>("Português");
+  const [onlyFavs, setOnlyFavs] = useState(false);
+  const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
 
-  const results = useMemo(() => searchHymns(query, lang), [query, lang]);
+  const results = useMemo(() => {
+    const base = searchHymns(query, lang);
+    if (!onlyFavs) return base;
+    const set = new Set(favIds);
+    return base.filter((h) => set.has(favId(h.language, h.number)));
+  }, [query, lang, onlyFavs, favIds]);
   const visible = results.slice(0, 200);
 
   return (
