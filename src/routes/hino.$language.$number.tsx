@@ -95,6 +95,16 @@ function HymnPage() {
               </Button>
               <Button
                 variant="outline"
+                size="icon"
+                onClick={() => toggleFav(hymn.language, hymn.number)}
+                aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                aria-pressed={fav}
+                className="ml-1"
+              >
+                <Star className={`h-4 w-4 ${fav ? "fill-primary text-primary" : ""}`} />
+              </Button>
+              <Button
+                variant="outline"
                 size="sm"
                 onClick={() => shareHymn(hymn)}
                 aria-label="Partilhar no WhatsApp"
