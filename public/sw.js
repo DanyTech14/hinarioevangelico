@@ -1,5 +1,5 @@
 /* Hinário service worker — offline cache */
-const CACHE = "hinario-v1";
+const CACHE = "hinario-v3";
 
 self.addEventListener("install", (e) => {
   self.skipWaiting();
