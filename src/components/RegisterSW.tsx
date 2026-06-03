@@ -15,8 +15,7 @@ export function RegisterSW() {
     const host = window.location.hostname;
     const isPreview =
       host.includes("id-preview--") ||
-      host.includes("lovableproject.com") ||
-      host.includes("lovable.app");
+      host.includes("lovableproject.com");
 
     if (inIframe || isPreview) {
       navigator.serviceWorker.getRegistrations().then((regs) => regs.forEach((r) => r.unregister()));
