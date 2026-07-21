@@ -97,7 +97,18 @@ function Home() {
                 <Star className={`h-3.5 w-3.5 ${onlyFavs ? "fill-current" : ""}`} />
                 Favoritos{favIds.length > 0 ? ` (${favIds.length})` : ""}
               </Button>
-              {["Todos", ...LANGUAGES].map((l) => (
+              {[
+                "Todos",
+                "Português",
+                "Umbundu",
+                "Adicionais (PT/Umbundu)",
+                ...LANGUAGES.filter(
+                  (l) =>
+                    l !== "Português" &&
+                    l !== "Umbundu" &&
+                    l !== "Adicionais (PT/Umbundu)",
+                ),
+              ].map((l) => (
                 <Button
                   key={l}
                   variant={lang === l ? "default" : "outline"}
