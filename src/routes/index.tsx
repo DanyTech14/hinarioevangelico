@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { InstallPrompt } from "@/components/InstallPrompt";
+import { NumberPad } from "@/components/NumberPad";
 import { HYMNS, LANGUAGES, searchHymns } from "@/lib/hymns";
 import { useFavorites, favId } from "@/lib/favorites";
 
