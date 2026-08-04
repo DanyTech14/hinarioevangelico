@@ -154,31 +154,14 @@ export function NumberPad({ language }: Props) {
               </Button>
             </div>
 
-            <div className="mt-3 flex gap-2">
-              <Button
-                onClick={go}
-                disabled={!match}
-                className="flex-1 h-12 text-base"
-              >
-                {match ? `Abrir ${match.number}. ${match.title}` : "Abrir hino"}
-              </Button>
-              <Button
-                variant="outline"
-                disabled={!match}
-                className="h-12"
-                onClick={() => {
-                  if (!match) return;
-                  setOpen(false);
-                  setValue("");
-                  navigate({
-                    to: "/projetor/$language/$number",
-                    params: { language: match.language, number: match.number },
-                  });
-                }}
-              >
-                Projetor
-              </Button>
-            </div>
+            <Button
+              onClick={go}
+              disabled={!match}
+              className="mt-3 w-full h-12 text-base"
+            >
+              {match ? `Abrir ${match.number}. ${match.title}` : "Abrir hino"}
+            </Button>
+
           </div>
         </div>
       )}
