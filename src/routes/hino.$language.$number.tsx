@@ -112,14 +112,6 @@ function HymnPage() {
               >
                 <Share2 className="h-4 w-4" /> <span className="hidden sm:inline">Partilhar</span>
               </Button>
-              <Link
-                to="/projetor/$language/$number"
-                params={{ language: hymn.language, number: hymn.number }}
-              >
-                <Button variant="outline" size="sm" className="gap-1.5" aria-label="Modo projetor">
-                  <MonitorPlay className="h-4 w-4" /> <span className="hidden sm:inline">Projetor</span>
-                </Button>
-              </Link>
               <Button
                 variant="outline"
                 size="icon"
