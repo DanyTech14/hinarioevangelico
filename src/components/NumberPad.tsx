@@ -1,21 +1,37 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Delete, Hash, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { findHymn } from "@/lib/hymns";
+import { findHymn, LANGUAGES } from "@/lib/hymns";
 
 type Props = {
   language: string;
-  onPick?: (n: string) => void;
 };
 
-export function NumberPad({ language, onPick }: Props) {
+const ORDER = ["Português", "Umbundu", "Adicionais (PT/Umbundu)"];
+
+function orderedLanguages() {
+  const rest = LANGUAGES.filter((l) => !ORDER.includes(l)).sort((a, b) =>
+    a.localeCompare(b),
+  );
+  return [...ORDER.filter((l) => LANGUAGES.includes(l)), ...rest];
+}
+
+export function NumberPad({ language }: Props) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+  const [lang, setLang] = useState(
+    language === "Todos" ? "Português" : language,
+  );
   const navigate = useNavigate();
 
-  const lang = language === "Todos" ? "Português" : language;
+  const langs = useMemo(orderedLanguages, []);
   const match = value ? findHymn(lang, value) : undefined;
+
+  // Segue o filtro escolhido na página
+  useEffect(() => {
+    if (language !== "Todos") setLang(language);
+  }, [language]);
 
   const press = (d: string) => setValue((v) => (v + d).slice(0, 4));
   const go = () => {
@@ -27,6 +43,19 @@ export function NumberPad({ language, onPick }: Props) {
       params: { language: match.language, number: match.number },
     });
   };
+
+  // Teclado físico
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (/^[0-9]$/.test(e.key)) press(e.key);
+      else if (e.key === "Backspace") setValue((v) => v.slice(0, -1));
+      else if (e.key === "Escape") setOpen(false);
+      else if (e.key === "Enter") go();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
 
   return (
     <>
@@ -41,12 +70,16 @@ export function NumberPad({ language, onPick }: Props) {
       </Button>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-background/70 backdrop-blur-sm">
-          <div className="w-full sm:max-w-sm rounded-t-2xl sm:rounded-2xl border border-border bg-card p-4 shadow-lg">
+        <div
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-background/70 backdrop-blur-sm"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="w-full sm:max-w-sm rounded-t-2xl sm:rounded-2xl border border-border bg-card p-4 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between mb-3">
-              <p className="text-sm text-muted-foreground">
-                Número do hino — <span className="text-foreground">{lang}</span>
-              </p>
+              <p className="text-sm text-muted-foreground">Número do hino</p>
               <button
                 type="button"
                 aria-label="Fechar"
@@ -57,6 +90,22 @@ export function NumberPad({ language, onPick }: Props) {
               </button>
             </div>
 
+            <div className="-mx-1 px-1 overflow-x-auto scrollbar-none mb-3">
+              <div className="flex gap-2 w-max">
+                {langs.map((l) => (
+                  <Button
+                    key={l}
+                    size="sm"
+                    variant={lang === l ? "default" : "outline"}
+                    onClick={() => setLang(l)}
+                    className="rounded-full shrink-0 text-xs"
+                  >
+                    {l}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
             <div className="rounded-xl border-2 border-border bg-background px-4 py-3 text-center">
               <div className="font-display text-4xl font-semibold tabular-nums min-h-[2.5rem]">
                 {value || "—"}
@@ -65,8 +114,8 @@ export function NumberPad({ language, onPick }: Props) {
                 {value
                   ? match
                     ? match.title
-                    : "Não encontrado"
-                  : "Digite o número"}
+                    : `Não existe em ${lang}`
+                  : `Digite o número — ${lang}`}
               </p>
             </div>
 
@@ -75,10 +124,7 @@ export function NumberPad({ language, onPick }: Props) {
                 <Button
                   key={d}
                   variant="secondary"
-                  onClick={() => {
-                    press(d);
-                    onPick?.(value + d);
-                  }}
+                  onClick={() => press(d)}
                   className="h-14 text-2xl font-display"
                 >
                   {d}
@@ -108,13 +154,31 @@ export function NumberPad({ language, onPick }: Props) {
               </Button>
             </div>
 
-            <Button
-              onClick={go}
-              disabled={!match}
-              className="mt-3 w-full h-12 text-base"
-            >
-              {match ? `Abrir ${match.number}. ${match.title}` : "Abrir hino"}
-            </Button>
+            <div className="mt-3 flex gap-2">
+              <Button
+                onClick={go}
+                disabled={!match}
+                className="flex-1 h-12 text-base"
+              >
+                {match ? `Abrir ${match.number}. ${match.title}` : "Abrir hino"}
+              </Button>
+              <Button
+                variant="outline"
+                disabled={!match}
+                className="h-12"
+                onClick={() => {
+                  if (!match) return;
+                  setOpen(false);
+                  setValue("");
+                  navigate({
+                    to: "/projetor/$language/$number",
+                    params: { language: match.language, number: match.number },
+                  });
+                }}
+              >
+                Projetor
+              </Button>
+            </div>
           </div>
         </div>
       )}
