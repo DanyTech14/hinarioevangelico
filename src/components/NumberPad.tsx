@@ -60,13 +60,13 @@ export function NumberPad({ language }: Props) {
   return (
     <>
       <Button
-        variant="outline"
-        size="sm"
+        variant="default"
+        size="icon"
         onClick={() => setOpen(true)}
-        className="rounded-full shrink-0 gap-1.5"
+        className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        aria-label="Abrir teclado numérico"
       >
-        <Hash className="h-3.5 w-3.5" />
-        Teclado
+        <Hash className="h-6 w-6" />
       </Button>
 
       {open && (
