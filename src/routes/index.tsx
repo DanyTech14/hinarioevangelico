@@ -88,7 +88,6 @@ function Home() {
 
           <div className="mt-4 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
-              <NumberPad language={lang} />
               <Button
                 variant={onlyFavs ? "default" : "outline"}
                 size="sm"
@@ -197,6 +196,10 @@ function Home() {
       </footer>
 
       <InstallPrompt />
+
+      <div className="fixed bottom-5 right-5 z-40">
+        <NumberPad language={lang} />
+      </div>
     </div>
   );
 }
