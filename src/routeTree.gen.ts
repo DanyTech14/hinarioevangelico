@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LiturgiaIndexRouteImport } from './routes/liturgia.index'
+import { Route as LiturgiaIdRouteImport } from './routes/liturgia.$id'
 import { Route as HinoLanguageNumberRouteImport } from './routes/hino.$language.$number'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +24,11 @@ const LiturgiaIndexRoute = LiturgiaIndexRouteImport.update({
   path: '/liturgia/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LiturgiaIdRoute = LiturgiaIdRouteImport.update({
+  id: '/liturgia/$id',
+  path: '/liturgia/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
   id: '/hino/$language/$number',
   path: '/hino/$language/$number',
@@ -31,30 +37,39 @@ const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/liturgia/$id': typeof LiturgiaIdRoute
   '/liturgia/': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/liturgia/$id': typeof LiturgiaIdRoute
   '/liturgia': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/liturgia/$id': typeof LiturgiaIdRoute
   '/liturgia/': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/liturgia/' | '/hino/$language/$number'
+  fullPaths: '/' | '/liturgia/$id' | '/liturgia/' | '/hino/$language/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/liturgia' | '/hino/$language/$number'
-  id: '__root__' | '/' | '/liturgia/' | '/hino/$language/$number'
+  to: '/' | '/liturgia/$id' | '/liturgia' | '/hino/$language/$number'
+  id:
+    | '__root__'
+    | '/'
+    | '/liturgia/$id'
+    | '/liturgia/'
+    | '/hino/$language/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LiturgiaIdRoute: typeof LiturgiaIdRoute
   LiturgiaIndexRoute: typeof LiturgiaIndexRoute
   HinoLanguageNumberRoute: typeof HinoLanguageNumberRoute
 }
@@ -75,6 +90,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LiturgiaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/liturgia/$id': {
+      id: '/liturgia/$id'
+      path: '/liturgia/$id'
+      fullPath: '/liturgia/$id'
+      preLoaderRoute: typeof LiturgiaIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/hino/$language/$number': {
       id: '/hino/$language/$number'
       path: '/hino/$language/$number'
@@ -87,6 +109,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LiturgiaIdRoute: LiturgiaIdRoute,
   LiturgiaIndexRoute: LiturgiaIndexRoute,
   HinoLanguageNumberRoute: HinoLanguageNumberRoute,
 }

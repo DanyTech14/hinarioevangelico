@@ -78,7 +78,7 @@ function LiturgyDetail() {
       <article className="mx-auto max-w-3xl px-4 py-8">
         <h1 className="font-display text-2xl sm:text-3xl font-semibold mb-6">{item.title}</h1>
         <div className="space-y-4" style={{ fontSize: size, lineHeight: 1.65 }}>
-          {item.body.split("\n\n").map((block, i) => {
+          {item.body.split("\n\n").map((block: string, i: number) => {
             const m = block.match(/^(Dirigente|Congregação|Todos|Ministro)\s*:\s*([\s\S]*)$/);
             if (m) {
               const isCong = m[1] === "Congregação" || m[1] === "Todos";
