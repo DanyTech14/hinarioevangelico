@@ -196,6 +196,10 @@ function Home() {
       </footer>
 
       <InstallPrompt />
+
+      <div className="fixed bottom-5 right-5 z-40">
+        <NumberPad language={lang} />
+      </div>
     </div>
   );
 }
