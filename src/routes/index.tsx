@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, BookOpen, Music, Star } from "lucide-react";
+import { Search, BookOpen, Music, Star, ScrollText } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -72,6 +72,16 @@ function Home() {
           {HYMNS.length} hinos em {LANGUAGES.length} línguas. Pesquise por número, título ou letra
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
+
+        <div className="mt-5">
+          <Button asChild variant="outline" size="sm" className="rounded-full gap-2">
+            <Link to="/liturgia">
+              <ScrollText className="h-4 w-4" />
+              Litanias, Salmos e Invocatórias
+            </Link>
+          </Button>
+        </div>
+
 
         <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
           <div className="relative">
