@@ -73,6 +73,16 @@ function Home() {
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
 
+        <div className="mt-5">
+          <Button asChild variant="outline" size="sm" className="rounded-full gap-2">
+            <Link to="/liturgia">
+              <ScrollText className="h-4 w-4" />
+              Litanias, Salmos e Invocatórias
+            </Link>
+          </Button>
+        </div>
+
+
         <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
