@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Delete, Hash, X } from "lucide-react";
+import { Delete, Keyboard, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { findHymn, LANGUAGES } from "@/lib/hymns";
 
@@ -66,7 +66,7 @@ export function NumberPad({ language }: Props) {
         className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow"
         aria-label="Abrir teclado numérico"
       >
-        <Hash className="h-6 w-6" />
+        <Keyboard className="h-6 w-6" />
       </Button>
 
       {open && (
