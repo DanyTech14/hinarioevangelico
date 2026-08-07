@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LiturgiaIndexRouteImport } from './routes/liturgia.index'
 import { Route as HinoLanguageNumberRouteImport } from './routes/hino.$language.$number'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiturgiaIndexRoute = LiturgiaIndexRouteImport.update({
+  id: '/liturgia/',
+  path: '/liturgia/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
@@ -25,27 +31,31 @@ const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/liturgia/': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/liturgia': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/liturgia/': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hino/$language/$number'
+  fullPaths: '/' | '/liturgia/' | '/hino/$language/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/hino/$language/$number'
-  id: '__root__' | '/' | '/hino/$language/$number'
+  to: '/' | '/liturgia' | '/hino/$language/$number'
+  id: '__root__' | '/' | '/liturgia/' | '/hino/$language/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LiturgiaIndexRoute: typeof LiturgiaIndexRoute
   HinoLanguageNumberRoute: typeof HinoLanguageNumberRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liturgia/': {
+      id: '/liturgia/'
+      path: '/liturgia'
+      fullPath: '/liturgia/'
+      preLoaderRoute: typeof LiturgiaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hino/$language/$number': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LiturgiaIndexRoute: LiturgiaIndexRoute,
   HinoLanguageNumberRoute: HinoLanguageNumberRoute,
 }
 export const routeTree = rootRouteImport
