@@ -66,7 +66,7 @@ export function NumberPad({ language }: Props) {
         className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow"
         aria-label="Abrir teclado numérico"
       >
-        <Hash className="h-6 w-6" />
+        <Keyboard className="h-6 w-6" />
       </Button>
 
       {open && (
