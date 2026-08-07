@@ -1,0 +1,345 @@
+[
+ {
+  "id": "inv-1",
+  "type": "invocatoria",
+  "number": "1",
+  "title": "Invocatória 1",
+  "body": "O Senhor está no seu santo templo: cale-se diante dele toda a terra. (Habacuque. 2:20)"
+ },
+ {
+  "id": "inv-2",
+  "type": "invocatoria",
+  "number": "2",
+  "title": "Invocatória 2",
+  "body": "Alegrei-me quando me disseram: Vamos à casa do Senhor. Na verdade o Senhor está neste lugar. Esta é a casa de Deus: esta é a porta dos céus. Dai ao Senhor a glória devida ao seu nome, adorai o Senhor na beleza da Sua santidade. (Salmo. 122:1; 29:2; Génesis 28:16-17)."
+ },
+ {
+  "id": "inv-3",
+  "type": "invocatoria",
+  "number": "3",
+  "title": "Invocatória 3",
+  "body": "Senhor quem habitará no Teu tabernáculo? Quem morará no Teu santo monte? Aquele que anda em sinceridade e pratica a justiça, e fala verazmente, segundo o seu coração. (Salmo 15:1-2)"
+ },
+ {
+  "id": "inv-4",
+  "type": "invocatoria",
+  "number": "4",
+  "title": "Invocatória 4",
+  "body": "Olhai para mim, e sereis salvos, vós, todos os termos da terra; porque eu Sou Deus, e não há outro. Na verdade a sua salvação está perto dos que o temem. O Senhor Deus é um sol e protecção. O Senhor dará graça e glória; não negará bem algum aos que andam na rectidão. Louvai ao Senhor. (Isaías 45:22; Salmo 85:9; 84:11; 106:1)"
+ },
+ {
+  "id": "inv-5",
+  "type": "invocatoria",
+  "number": "5",
+  "title": "Invocatória 5",
+  "body": "Bom é louvar ao Senhor, e cantar louvores ao teu nome, ó Altíssimo; para de manhã anunciar a tua benignidade, e todas as noites, a tua fidelidade. (Salmo 92:1-2)"
+ },
+ {
+  "id": "inv-6",
+  "type": "invocatoria",
+  "number": "6",
+  "title": "Invocatória 6",
+  "body": "Como o cervo brama pelas correntes das águas, assim suspira a minha alma por ti, ó Deus! A minha alma tem sede de Deus, do Deus vivo: Quando entrarei e me apresentarei ante a face de Deus? A minha alma espera somente em Deus; dele vem a minha salvação. Porque a tua benignidade é melhor do que a vida; os meus lábios te louvarão. (Salmo 42: 1-2; 62:1; 63: 3)"
+ },
+ {
+  "id": "inv-7",
+  "type": "invocatoria",
+  "number": "7",
+  "title": "Invocatória 7",
+  "body": "Vós, os que temeis ao Senhor, confiai no Senhor: ele é seu auxílio e seu escudo. (Salmo 115:11)"
+ },
+ {
+  "id": "inv-8",
+  "type": "invocatoria",
+  "number": "8",
+  "title": "Invocatória 8",
+  "body": "Vinde, e tornemos para o Senhor, porque ele despedaçou e nos sarará; fez a ferida e a ligará. Conheçamos, e prossigamos em conhecer ao Senhor; como a alva será a sua saída, e ele a nós virá como a chuva, como chuva serôdia que rega a terra. (Oseias 6:1,3)"
+ },
+ {
+  "id": "inv-9",
+  "type": "invocatoria",
+  "number": "9",
+  "title": "Invocatória 9",
+  "body": "Com que me apresentarei ao Senhor, e me inclinarei ante o Deus Altíssimo? Ele te declarou, ó homem, o que é bom. E que é o que o Senhor pede de ti, senão que pratiques a justiça, e ames a beneficência, e andes humildemente com o teu Deus? (Miqueias 6-6,8)"
+ },
+ {
+  "id": "inv-10",
+  "type": "invocatoria",
+  "number": "10",
+  "title": "Invocatória 10",
+  "body": "Exaltai ao Senhor, nosso Deus, e adorai-O no Seu santo monte, porque o Senhor, nosso Deus, é santo. (Salmo 99:9)"
+ },
+ {
+  "id": "inv-11",
+  "type": "invocatoria",
+  "number": "11",
+  "title": "Invocatória 11",
+  "body": "Vinde, cantemos ao Senhor: cantemos com júbilo à rocha da nossa salvação. Porque o Senhor é Deus grande, e Rei grande, acima de todos os deuses. Ó, vinde, adoremos e prostremo-nos; ajoelhemos diante do Senhor que nos criou. Porque ele é o nosso Deus, e nós, povo do seu pasto e ovelhas da sua mão. Se hoje ouvirdes a sua voz, não endureçais os vossos corações. (Salmo 95:1-3, 6-8)"
+ },
+ {
+  "id": "inv-12",
+  "type": "invocatoria",
+  "number": "12",
+  "title": "Invocatória 12",
+  "body": "O vosso coração viverá, pois que buscais a Deus. Louvai ao Senhor. (Salmo 69:32;106:1)"
+ },
+ {
+  "id": "inv-13",
+  "type": "invocatoria",
+  "number": "13",
+  "title": "Invocatória 13",
+  "body": "Sabei que o Senhor é Deus: foi ele, e não nós, que nos fez povo seu e ovelhas do seu pasto. Entrai pelas portas dele com louvor, e em seus átrios com hinos: louvai-O e bendizei o seu nome. Porque o Senhor é bom, e eterna a Sua misericórdia; e a sua verdade estende-se de geração em geração. (Salmo 100:3-5)"
+ },
+ {
+  "id": "inv-14",
+  "type": "invocatoria",
+  "number": "14",
+  "title": "Invocatória 14",
+  "body": "De tarde e de manhã e ao meio-dia orarei; e clamarei, e Ele ouvirá a minha voz. Eu te exaltarei, ó Deus, rei meu, e bendirei o teu nome pelos séculos dos séculos. (Salmo 55:17;145:1)"
+ },
+ {
+  "id": "inv-15",
+  "type": "invocatoria",
+  "number": "15",
+  "title": "Invocatória 15",
+  "body": "Porque eu bem sei os pensamentos que penso de vós, diz o Senhor; pensamentos de paz, e não de mal, para vos dar o fim que esperais. Então me invocareis, e ireis, e orareis a mim, e eu vos ouvirei. E buscar-me-eis, e me achareis, quando me buscardes de todo o vosso coração. (Jeremias 29:11-13)"
+ },
+ {
+  "id": "inv-16",
+  "type": "invocatoria",
+  "number": "16",
+  "title": "Invocatória 16",
+  "body": "Quem subirá ao monte do Senhor, ou quem estará no seu lugar Santo? Aquele que é limpo de mãos e puro de coração. Este receberá a bênção do Senhor e a justiça do Deus da sua salvação. Bem- aventurados os que trilham caminhos rectos, e andam na lei do Senhor. Bem-aventurados os que guardam os seus testemunhos, e o buscam de todo o coração. (Salmo 24:3-5; 119:1-2)"
+ },
+ {
+  "id": "inv-17",
+  "type": "invocatoria",
+  "number": "17",
+  "title": "Invocatória 17",
+  "body": "Este é o dia que fez o Senhor: regozijemo-nos, e alegremo-nos nele. Dai ao Senhor a glória devida ao seu nome: porque o Senhor nosso Deus é santo. (Salmo118:24; 29:2; 99:9)"
+ },
+ {
+  "id": "inv-18",
+  "type": "invocatoria",
+  "number": "18",
+  "title": "Invocatória 18",
+  "body": "Deus é Espírito, e importa que os que o adoram, o adorem em espírito e em verdade. Sejam agradáveis as palavras da minha boca e a meditação do meu coração perante a tua face, Senhor, Rocha minha e Libertador meu! (João 4:24; Salmo 19:14)"
+ },
+ {
+  "id": "inv-19",
+  "type": "invocatoria",
+  "number": "19",
+  "title": "Invocatória 19",
+  "body": "Desde o nascimento do sol até ao ocaso, seja louvado o nome do Senhor. Entrai pelas portas dele com louvor, e em seus átrios com hinos. Louvai-O e bendizei o seu nome. (Salmo 113:3; 100:4) DO ADVENTO"
+ },
+ {
+  "id": "inv-20",
+  "type": "invocatoria",
+  "number": "20",
+  "title": "Invocatória 20",
+  "body": "Porque o mesmo Senhor descerá do céu, com alarido, e com voz de arcanjo, e com a trombeta de Deus, e os que morreram em Cristo ressuscitarão primeiro. Eis que vem com as nuvens, e todo o olho o verá, até os mesmos que o trespassaram; e todas as tribos da terra se lamentarão sobre ele. Sim. Ámen. (I. Tessalonicenses 4:16; Apolípse 1:7)"
+ },
+ {
+  "id": "inv-21",
+  "type": "invocatoria",
+  "number": "21",
+  "title": "Invocatória 21",
+  "body": "E será, naquele dia, que se tocará uma grande trombeta, e os que andavam perdidos pela terra da Assíria, e os que foram desterrados para a terra do Egipto tornarão a vir, e adorarão ao Senhor no monte santo, em Jerusalém. (Isaías 27:13) DO NATAL"
+ },
+ {
+  "id": "inv-22",
+  "type": "invocatoria",
+  "number": "22",
+  "title": "Invocatória 22",
+  "body": "Mas, vindo a plenitude dos tempos, Deus enviou seu Filho, nascido de mulher, nascido sob a lei, para remir os que estavam debaixo da lei, a fim de recebermos a adopção de filhos. (Gálatas 4:4-5) DA EPIFANIA"
+ },
+ {
+  "id": "inv-23",
+  "type": "invocatoria",
+  "number": "23",
+  "title": "Invocatória 23",
+  "body": "E o verbo se fez carne, e habitou entre nós, e vimos a sua glória, como a glória do unigénito do Pai, cheio de graça e de verdade. (João 1:14) DA QUARESMA"
+ },
+ {
+  "id": "inv-24",
+  "type": "invocatoria",
+  "number": "24",
+  "title": "Invocatória 24",
+  "body": "Ainda assim, agora mesmo, diz o Senhor: Convertei-vos a mim de todo o vosso coração; e isso com jejuns, e com choro, e com pranto. E rasgai o vosso coração, e não os vossos vestidos, e convertei-vos ao Senhor vosso Deus; porque ele é misericordioso, e compassivo, e tardio em irar-se, e grande em beneficência. (Joel 2:12-13) DO DOMINGO DE RAMOS"
+ },
+ {
+  "id": "inv-25",
+  "type": "invocatoria",
+  "number": "25",
+  "title": "Invocatória 25",
+  "body": "Hosana ao Filho de David; bendito o que vem em nome do Senhor! Dizei à folha de Sião: Eis que o teu Rei virá a ti, Justo de Salvador. Bendito o Rei que vem em nome do Senhor! Paz no céu e glória nas alturas! Assim o Senhor seja convosco. DA PÁSCOA"
+ },
+ {
+  "id": "inv-26",
+  "type": "invocatoria",
+  "number": "26",
+  "title": "Invocatória 26",
+  "body": "Diziam: Ressuscitou verdadeiramente o Senhor, e já apareceu a Simão. Porque, se cremos que Jesus morreu e ressuscitou, assim, também, aos que em Jesus dormem, Deus os tornará a trazer com ele. (Luc. 24:34;1Tes 4:14)"
+ },
+ {
+  "id": "inv-27",
+  "type": "invocatoria",
+  "number": "27",
+  "title": "Invocatória 27",
+  "body": "Se o Espírito daquele que dos mortos ressuscitou a Jesus habita em vós, aquele que dos mortos ressuscitou a Cristo também vivificará os vossos corpos mortais, pelo seu Espírito que em vós habita. (Rom.8:11) DO PENTECOSTES"
+ },
+ {
+  "id": "inv-28",
+  "type": "invocatoria",
+  "number": "28",
+  "title": "Invocatória 28",
+  "body": "E há-de ser que, depois, derramarei o meu Espírito sobre toda a carne, e vossos filhos e vossas filhas profetizarão, os vossos velhos terão sonhos, os vossos mancebos terão visões. E, também, sobre os servos e sobre as servas, naqueles dias, derramarei o meu Espírito. (Joel 2:28-29)"
+ },
+ {
+  "id": "lit-1",
+  "type": "litania",
+  "number": "1",
+  "title": "Primeira Litania – Chamada Para Adoração",
+  "body": "Dirigente: O Senhor está no seu santo templo: cale-se diante dele toda a terra. (Habacuque 2:20)\n\nCongregação: Escutarei o que Deus, o Senhor, disser; porque falará de paz ao seu povo. (Salmo 85:8)\n\nDirigente: Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia. (Salmo46:1)\n\nCongregação: Pelo que não temeremos, ainda que a terra se mude, e ainda que os montes se transportem para o meio dos mares . (Salmo46:2)\n\nDirigente: Esperai no Senhor, porque no Senhor há abundante misericórdia. (Salmo130:7)\n\nCongregação: Aguardo ao Senhor; a minha alma o aguarda, e espero na sua palavra. (Salmo130:5)\n\nDirigente: Engrandecei ao Senhor comigo, e juntos exaltemos o seu nome. (Salmo34:3)\n\nCongregação: Porque grande é o Senhor, e digno de louvor. (Salmo 96:4)\n\nDirigente: Misericordioso e piedoso é o Senhor: longânimo e grande em benignidade. (Salmo 103:8)\n\nCongregação: Não nos tratou segundo os nossos pecados, nem nos retribuiu segundo as nossas iniquidades. (Salmo 103:10)\n\nDirigente: Quanto o céu está elevado acima da terra, assim é grande a sua misericórdia para com os que o temem. (Salmo 103:11)\n\nCongregação: Quanto está longe o oriente do ocidente, assim afasta de nós as nossas transgressões. (Salmo 103:12)\n\nDirigente: Confia no Senhor de todo o teu coração, e não te estribes no teu próprio entendimento. (Provérbios 3:5)\n\nCongregação: Sonda-me, ó Deus, e conhece o meu coração: prova-me, e conhece os meus pensamentos. E vê se há em mim algum caminho mau, e guia-me pelo caminho eterno. (Salmo 139:23-24)\n\nDirigente: Vede quão grande caridade nos tem concedido o Pai; que fôssemos chamados filhos de Deus. (I João 3:1)\n\nCongregação: Graças a Deus, pelo seu dom inefável. (II Coríntios 9:15)"
+ },
+ {
+  "id": "lit-2",
+  "type": "litania",
+  "number": "2",
+  "title": "Segunda Litania – Confissão Do Pecado",
+  "body": "Dirigente: Ó Pastor de Israel, dá ouvidos; tu, que guias a José como a um rebanho, que te assentas entre os Querubins, resplandece! Perante Efraim, Benjamim e Manassés, desperta o teu poder, e vem salvar-nos. (Salmo 80:1-2)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos. (Salmo 80:7)\n\nDirigente: Trouxeste uma vinha do Egipto: lançaste fora as nações, e a plantaste. Preparaste-lhe lugar e fizeste com que ela aprofundasse raízes, e assim encheu a terra. (Salmo 80:8-9)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Ó Deus dos exércitos, volta-te, nós te rogamos, atende dos céus, e vê, e visita esta vinha; e a videira que a tua dextra plantou, e o sarmento que fortificaste para ti. (Salmo 80:14-15)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Tem misericórdia de nós, ó Deus, segundo a tua benignidade; apaga as nossas transgressões, segundo a multidão das tuas misericórdias. Cria em nós, ó Deus, um coração puro, e renova em nós um espírito recto. (Salmo 51:1,10)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Lava-nos completamente da nossa iniquidade, e purifica-nos do nosso pecado. Contra ti, contra ti somente pecamos, e fizemos o que a teus olhos parece mal, para que sejas justificado quando falares, e puro quando julgares. Abre, Senhor, os nossos lábios, e a nossa boca entoará o teu louvor. Torna a dar-nos a alegria da tua salvação, e sustém-nos com um espírito voluntário. A um coração quebrantado e contrito não desprezarás, ó Deus. (Salmo 51:2,4,12,15,17)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Se Deus concedeu àqueles gentios o mesmo Dom que a nós, quando havemos crido no Senhor Jesus Cristo, quem era então eu, para que pudesse resistir a Deus? Na verdade, até aos gentios Deus deu o arrependimento para a vida. (Actos 11:17,18)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Disse-me o Espírito que fosse com eles, nada duvidando. E, quando comecei a falar, caiu sobre eles o Espírito Santo como também sobre nós ao princípio. Porque, todos os que são guiados pelo Espírito de Deus, esses são filhos de Deus. (Actos 11:12,15,Romanos 8:14)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Eis que sobreveio o anjo do Senhor, e resplandeceu uma luz na prisão. E disse-lhe o anjo: Cinge-te, e acta as tuas alparcas. Lança às costas a tua capa, e segue-me. (Actos 12:7-8)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos.\n\nDirigente: Mas, segundo a sua promessa, aguardamos novos céus e nova terra, em que habita a justiça. E ouvi uma grande voz, do céu, que dizia: Eis aqui o tabernáculo de Deus com os homens, pois com eles habitará, e eles serão o seu povo, e o mesmo Deus estará com eles e será o seu Deus. E Deus limpará dos seus olhos toda a lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor; porque já as primeiras coisas são passadas. (II. Pedro 3:13; Apocalípse 21:3,4)\n\nCongregação: Faze-nos voltar, ó Deus dos exércitos; faze resplandecer o teu rosto, e seremos salvos."
+ },
+ {
+  "id": "lit-3",
+  "type": "litania",
+  "number": "3",
+  "title": "Terceira Litania – Súplica Geral",
+  "body": "Dirigente: Buscai ao Senhor enquanto se pode achar. Invocai-o enquanto está perto. Deixe o ímpio o seu caminho, e o homem maligno os seus pensamentos, e se converta ao Senhor, que se compadecerá dele. Torne para o nosso Deus, porque grandioso é em perdoar. (Isaías 55:6-7)\n\nCongregação: Porque o Senhor é bom, e eterna a sua misericórdia. A sua verdade estende-se de geração em geração. (Salmo 100:5)\n\nDirigente: Ainda que os vossos pecados sejam como a escarlata, eles se tornarão brancos como a neve; ainda que sejam vermelhos como o carmesim, se tornarão como a branca lã. Se andarmos na luz, como ele na luz está, o sangue de Jesus Cristo, seu Filho, nos purifica de todo o pecado. (Isaías 1:18; I. João 1:7)\n\nCongregação: Se dissermos que não temos pecado, enganamo-nos a nós mesmos, e não há verdade em nós. Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados, e nos purificar de toda a injustiça. (I. João 1:8,9)\n\nDirigente: O que encobre as suas transgressões, nunca prosperará; mas o que as confessa e as deixa, alcançará misericórdia. Confessemos, pois, os nossos pecados, porque bem-aventurado é aquele cuja transgressão é perdoada, e cujo pecado é coberto. (Provérbios 28:13; I João 1:9; Salmo 32:1)\n\nCongregação: Confessei-te o meu pecado, e a minha maldade não encobri; dizia eu: Confessarei ao Senhor as minhas transgressões; e tu perdoaste a maldade do meu pecado. (Salmo 32:5)\n\nDirigente: Porque eu sei os pensamentos que penso de vós, diz o Senhor: Pensamentos de paz, e não de mal, para vos dar o fim que esperais. Então me invocareis e buscar-me-eis, e me achareis, quando me buscardes de todo o vosso coração. Esquadrinhemos, pois, os nossos caminhos, experimentemo-los, e voltemos ao Senhor. Levantemos os nossos corações para Deus nos céus. (Jeremias 29:11-13;Lamentações 3: 40-41)\n\nCongregação: Tem misericórdia de mim, ó Deus, segundo a tua benignidade: apaga as minhas transgressões, segundo a multidão das tuas misericórdias. Cria em mim, ó Deus, um coração puro, e renova em mim um espírito recto. Guia-me pelo caminho eterno. (Salmo 51:1,10;139:24)\n\nDirigente: Àquele que não conheceu pecado, o fez pecado por nós, para que nele fôssemos feitos justiça de Deus. Assim, também, vós, considerai-vos como mortos para o pecado, mas vivos para Deus em Cristo Jesus, nosso Senhor. (2 Coríntios 5:21;Romanos 6:11)\n\nCongregação: Nele temos a redenção pelo seu sangue, a remissão das ofensas, segundo as riquezas da sua graça. (Efésios 1:7) Dirigente e Congregação: Graças a Deus, pelo seu Dom inefável. (2Coríntios 9:15)"
+ },
+ {
+  "id": "lit-4",
+  "type": "litania",
+  "number": "4",
+  "title": "Quarta Litania – De Acção De Graças",
+  "body": "Dirigente: Dêmos graças a Deus, pela sua revelação a nós homens, através de muitas coisas faladas e feitas, mas especialmente, por nos ter falado pelo seu Filho Jesus Cristo, nosso Salvador, feito nosso Caminho, nossa Verdade e nossa Vida.\n\nCongregação: Graças a Deus, pelo seu dom inefável.\n\nDirigente: Dêmos graças a Deus, pela grande testemunha que temos em nossos corações, o Espírito Santo, e pela Obra de Salvação que este Espírito Santo tem consumado em nós, e ainda pela inteligência e força que nos tem proporcionado.\n\nCongregação: Graças a Deus, pelo seu dom inefável.\n\nDirigente: Dêmos graças a Deus, pelas Sagradas Escrituras, feitas lâmpadas para os nossos pés e que nos podem guiar para o caminho da salvação e vida eterna. Dêmos-lhe também graças por nos ter enviado aqueles que nos explicaram a sua Santa Palavra e nos indicaram a verdadeira salvação.\n\nCongregação: Graças a Deus, pelo seu dom inefável.\n\nDirigente: Dêmos graças a Deus, por nos ter chamado a entrar na Sua Santa Obra e a sermos Seus mensageiros. Dêmos-lhe também graças, porque sabemos que nesta obra estamos a ajudar o povo da nossa terra, contribuindo, deste modo para a expansão do poder da sua Igreja, entre nós.\n\nCongregação: Graças a Deus, pelo seu dom inefável.\n\nDirigente: Dêmos graças a Deus, porque não nos deixou na dúvida, porém, deu-nos o compreensível mandato de Nosso Senhor Jesus Cristo, que diz: Ide por todo o mundo e pregai o Evangelho a toda a criatura; e Ele mesmo nos deixou a firme promessa quando disse: Eis que estou convosco todos os dias, até à consumação dos séculos.\n\nCongregação: Graças a Deus, pelo seu dom inefável."
+ },
+ {
+  "id": "lit-5",
+  "type": "litania",
+  "number": "5",
+  "title": "Quinta Litania – De Petição De Coragem",
+  "body": "Dirigente: Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia. Pelo que não temeremos, ainda que a terra se mude, e ainda que os montes se transportem para o meio dos mares. (Salmo 46:1-2)\n\nCongregação: O Senhor é meu Pastor: nada me faltará. Deitar-me faz em verdes pastos, guia-me mansamente a águas tranquilas. Refrigera a minha alma; guia-me pelas veredas da justiça, por amor do seu nome. (Salmo 23:1-3)\n\nDirigente: O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei? (Salmo 27:1)\n\nCongregação: Ainda que eu andasse pelo vale da sombra da morte, não temeria mal algum, porque tu estás comigo; a tua vara e o teu cajado me consolam. (Salmo 23;4)\n\nDirigente: Aquele que habita no esconderijo do Altíssimo, à sombra do Omnipotente descansará. Direi do Senhor: Ele é o meu Deus, o meu refúgio, a minha fortaleza, e n’Ele confiarei. Porque aos seus anjos dará ordem a teu respeito, para te guardarem em todos os teus caminhos. Eles te sustentarão nas suas mãos, para que não tropeces com o teu pé em pedra. (Salmo 91:1-2. 11-12.)\n\nCongregação: O Senhor te guardará de todo o mal: Ele guardará a tua alma. O Senhor guardará a tua entrada e a tua saída, desde agora e para sempre. (Salmo 121:7-8)\n\nDirigente: Ele me invocará, e eu lhe responderei; estarei com ele na angústia; livrá-lo-ei, e o glorificarei. Dar-lhe-ei abundância de dias, e lhe mostrarei a minha salvação. (Salmo 91:15-16)\n\nCongregação: Não deixará vacilar o teu pé: aquele que te guarda não tosquenejará. Eis que não tosquenejará nem dormirá o guarda de Israel. O Senhor é quem te guarda. (Salmo 121:3-5)\n\nDirigente: Bem-aventurados os que trilham caminhos rectos, e andam na lei do Senhor. Bem-aventurados os que guardam os seus testemunhos, e o buscam de todo o coração, e não praticam iniquidades, mas andam nos seus caminhos. (Salmo 119:1-3)\n\nCongregação: Oxalá os meus caminhos fossem dirigidos de maneira a poder eu observar os teus estatutos. Então não ficaria confundido, atentando eu para todos os teus mandamentos. (Salmo 119:5-6)"
+ },
+ {
+  "id": "lit-6",
+  "type": "litania",
+  "number": "6",
+  "title": "Sexta Litania – Do Natal",
+  "body": "Dirigente: Glória seja dada ao Senhor dos Senhores, que foi enviado para a remissão dos homens que prometem fazer a sua vontade.\n\nCongregação: Em todas as línguas, seja Ele louvado. Aleluia ao Príncipe da Paz!\n\nDirigente: Ele será grande, e será chamado Filho do Altíssimo; e o Senhor Deus lhe dará o trono de David, seu pai; e reinará eternamente na casa de Jacob, e o seu reino não terá fim. (Lucas 1:32-33)\n\nCongregação: Em todas as línguas, seja Ele louvado. Aleluia ao Príncipe da Paz!\n\nDirigente: Porque, para Deus, nada é impossível. Aquele que Nele confia é bem-aventurado, porque as coisas que o Senhor lhe disser serão cumpridas. Maria, a mãe do Senhor, disse: Eis que desde agora, todas as gerações me chamarão bem-aventurada: porque me fez grandes coisas o Poderoso; e Santo é o seu Nome. E a sua misericórdia é de geração em geração, sobre os que o temem. (Lucas 1:37, 45, 48-50)\n\nCongregação: Em todas as línguas, seja Ele louvado. Aleluia ao Príncipe da Paz!\n\nDirigente: Assim diz Deus Pai, Tu és meu Filho, hoje te gerei. E disse mais: Eu lhe serei por Pai, e ele me será por Filho. Quando introduz no mundo o primogénito, diz: Todos os anjos de Deus o adorem. O teu trono, ó Deus, subsiste pelos séculos dos séculos; ceptro de equidade é o ceptro do teu reino. E Isaías diz: E o seu nome será: Maravilhoso, Conselheiro, Deus Forte, Pai da eternidade, Príncipe da paz. (Hebreus 1:5-6,8;Is.9:6)\n\nCongregação: Em todas as línguas, seja Ele louvado. Aleluia ao Príncipe da Paz!\n\nDirigente: Louvar-te-ei, ó Senhor, entre os gentios. Exaltai o Senhor. Louvem-no todos os povos. Diz o Senhor que todo o joelho se dobrará diante de mim, e toda a língua confessará a Deus. Uma multidão incontável, de todas as nações e tribos e povos e línguas, e clamavam com grande voz dizendo: Salvação ao nosso Deus. (Salmo 18:49;67:5; Romanos 14:11;Ap.7:9-10)\n\nCongregação: Em todas as línguas, seja Ele louvado. Aleluia ao Príncipe da Paz!"
+ },
+ {
+  "id": "lit-7",
+  "type": "litania",
+  "number": "7",
+  "title": "Sétima Litania – Do Domingo De Ramos",
+  "body": "Dirigente: A multidão que ia adiante e a que seguia, clamava dizendo: Hozana ao Filho de David; bendito o que vem em nome do Senhor! Louvemos ao Senhor. Deus é Espírito e importa que os que O adoram, O adorem em Espírito e em verdade. Dai graças ao Senhor e bendizei o seu nome; anunciai entre todos os povos as suas maravilhas. Cantai-lhe hinos de louvor, inclinai os vossos corações a Deus.\n\nCongregação: Apresentamos a Deus os nossos corações.\n\nDirigente: Senhor, abre os nossos olhos.\n\nCongregação: Para que vejamos as maravilhas da Tua Palavra.\n\nDirigente: Senhor, abre as nossas bocas.\n\nCongregação: Para que delas saia todo o louvor.\n\nDirigente: Louvai ao Senhor.\n\nCongregação: O nome do Senhor seja louvado."
+ },
+ {
+  "id": "lit-8",
+  "type": "litania",
+  "number": "8",
+  "title": "Oityava Litania – Da Páscoa",
+  "body": "Dirigente: Glória ao Pai, e ao Filho, e ao Espírito Santo.\n\nCongregação: Como era no princípio, agora e sempre, por todos os séculos. Ámen.\n\nDirigente: E, no primeiro dia da semana, muito de madrugada, as mulheres foram Ao sepulcro, levando as especiarias que tinham preparado. E acharam a pedra revolvida do sepulcro. (Lucas 24:1-2)\n\nCongregação: Aleluia! (Pode ser cantado, se for possível).\n\nDirigente: E, saindo elas pressurosamente do sepulcro, com temor e grande alegria, eis que Jesus lhes sai ao encontro, dizendo: Eu vos saúdo. (Mateus 28:8-9)\n\nCongregação: Aleluia!\n\nDirigente: E Maria estava chorando fora, junto do sepulcro. Estando ela pois, chorando, abaixou-se para o sepulcro. Ela disse: Levaram o meu Senhor e não sei onde o puseram. E, tendo dito isto, voltou-se para trás, e viu Jesus em pé, mas não sabia que era Jesus. Disse-lhe Jesus: Mulher, porque choras? Ela, voltando-se, disse-lhe: Raboni. (João 20:11,13-15)\n\nCongregação: Aleluia!\n\nDirigente: E eis que, no mesmo dia, iam dois deles para uma aldeia, cujo nome era Emaús. E aconteceu que, indo eles falando entre si, e fazendo perguntas um ao outro, o mesmo Jesus se aproximou e ia com eles. (Lucas 24:13,15)\n\nCongregação: Aleluia!\n\nDirigente: E serradas as portas onde os discípulos, com medo dos Judeus, se tinham ajuntado, chegou Jesus e pôs-se no meio e disse-lhes: Paz seja convosco! E, dizendo isto, mostrou-lhes as suas mãos e o lado. (João 20:19-20)\n\nCongregação: Aleluia!\n\nDirigente: Disse-lhes Simão Pedro: Vou pescar. Disseram-lhe eles: Também nós vamos contigo. E naquela noite nada apanharam. E, sendo já manhã, Jesus se apresentou na praia. Então aquele discípulo a quem Jesus amava, disse a Pedro: É o Senhor! (João 21:3-4,7)\n\nCongregação: Aleluia!\n\nDirigente: Eu fui arrebatado em espírito, no dia do Senhor, e ouvi detrás de mim uma grande voz. E virei-me para ver quem falava comigo. E, virando-me, vi um semelhante ao Filho do Homem, vestido até aos pés de um vestido comprido e cingido pelos peitos com um cinto de ouro. E, a sua cabeça e cabelos eram brancos, como lã branca, como a neve, e os seus olhos como chama de fogo; e. os seus pés, semelhantes a latão reluzente, como se tivessem sido refinados numa fornalha, e a sua voz como a voz de muitas águas. E eu, quando o vi, caí a seus pés como morto; e ele pôs sobre mim a sua dextra, dizendo: Não temas, Eu sou o primeiro e o último e o que vivo e fui morto, mas eis aqui, estou vivo para todo o sempre, e tenho as chaves da morte e do inferno. (Apocalipse 1:10,12-15, 17-18)\n\nCongregação: Aleluia, Aleluia, Aleluia!"
+ },
+ {
+  "id": "lit-9",
+  "type": "litania",
+  "number": "9",
+  "title": "Nona Litania – Do Pentecostes",
+  "body": "Dirigente: Ó Espírito Criador, Senhor da vida e luz, dador dos bens da graça, e Consolador dos corações e nosso Guia.\n\nCongregação: Ouve-nos, ó Espírito Santo, e ajuda-nos.\n\nDirigente: Ó Espírito, fonte da sabedoria e Inteligência, que procedes do Nosso Pai que está nos céus e de Jesus Cristo seu Filho: olha para nós misericordiosamente e dirige-nos na tua luz, para que nos separemos das trevas e prossigamos a colaborar naquilo que é verdadeiramente Teu.\n\nCongregação: Ouve-nos, ó Espírito Santo, e ajuda-nos.\n\nDirigente: Ó Espírito de Amor e Misericórdia que desceste abundantemente sobre nosso Senhor Jesus Cristo, pois te revelaste na sua imaculada vida aqui na terra, no seu profundo ensino e na sua morte redentora, para a nossa salvação. Tu fizeste a glória da sua ressurreição. Abre os nossos corações à tua influência.\n\nCongregação: Ouve-nos, ó Espírito Santo, e ajuda-nos.\n\nDirigente: Ó Espírito Divino, que tens sido concedido a todos que rogam a Deus Nosso Pai, que és Aquele que nosso Senhor Jesus Cristo prometeu enviar aos seus discípulos. Vem a nós, sê connosco e, mediante a tua graça, protege-nos de toda a malícia.\n\nCongregação: Ouve-nos, ó Espírito Santo, e ajuda-nos.\n\nDirigente: Ó Espírito Todo-Poderoso, como desceste sobre a Igreja no princípio, transformando os discípulos em grandes testemunhas do nosso Salvador, concedendo-lhes vitórias na luta contra as muitas dificuldades. Assim te suplicamos que desças sobre a Igreja em Angola, na África e em todo o mundo; concede que haja neles o resplendor da tua luz e o poder de Deus para salvar todo o mundo.\n\nCongregação: Ouve-nos, ó Espírito Santo, e ajuda-nos.\n\nDirigente: Ó Espírito Divino, que interpretas os ensinamentos de nosso Senhor Jesus Cristo, explica-nos todas as palavras e semeia-as em nossos corações. Rectifica os nossos pensamentos e purifica os nossos corações, para que fiquemos cheios da tua graça e da tua vida, e para que produzamos aquele fruto abundante que glorifica o teu Santo Nome.\n\nCongregação: Ouve-nos, ó Espírito Santo, e ajuda-nos"
+ },
+ {
+  "id": "lit-10",
+  "type": "litania",
+  "number": "10",
+  "title": "Décima Litania – Do Primeiro Dia Do Ano",
+  "body": "Dirigente: Findos os dias do ano velho, e já no primeiro dia do Ano-Novo, dediquemo-nos a Deus e peçamos-lhe para nos guardar com a Sua bondade, a qual nos cerque e nos guie no decorrer do Ano-Novo que nos concedeu.\n\nCongregação: (Canta a 1ª estrofe do Hino N.º 22)\n\nDirigente: Em viagem da nossa vida neste Ano, prometemos deixar-nos guiar por Jesus, pois Ele mesmo disse: não se turbe o vosso coração, credes em Deus, credes também em mim. Eu sou o caminho e a verdade e a vida.\n\nCongregação: (Canta a 2ª estrofe do Hino N.º 22)\n\nDirigente: Hoje é o primeiro dia do ano. Alguém sabe como há-de ser este ano? Somente o sabe Deus. Por isso purificai-vos pela bondade de Jesus. Porque o justo tem vida pela bondade e esperança, porque a fé é o firme fundamento das cosas que se esperam e a prova das coisas que não se vêm.\n\nCongregação: (Canta a 3ª estrofe do Hino N.º 22)\n\nDirigente: Crianças, rapazes, raparigas, homens, mulheres, velhos e todos vós, não amemos a Deus só com palavras e a língua, mas sim com obras e verdade. Somos conhecidos se tivermos a verdadeira fé n’Ele e a Ele oferecermos os nossos corações. Deus é Omnisciente. Perante a Sua face nada está oculto. Ele conhece os segredos de todos os corações. Ai de quem tiver quaisquer segredos perante Ele, porque Deus vê tudo. Bem- aventurados os que têm corações puros e a eles seja dado tudo o que a Deus pedirem, porque respeitam os mandamentos do Senhor e fazem tudo aquilo que é recto diante d’Ele.\n\nCongregação: (Canta a 4ª estrofe do Hino N.º 22)\n\nDirigente: O Seu mandamento é que confiemos em Seu Filho, Jesus Cristo, amando-nos uns aos outros. Aquele que guarda os mandamentos do Senhor está com Deus e Deus com ele. Sabemos que Ele está connosco, porque nos enviou o Espírito Santo. Ámen."
+ },
+ {
+  "id": "salmo-19",
+  "type": "salmo",
+  "number": "19",
+  "title": "Salmo 19",
+  "body": "Os céus manifestam a glória de Deus e o firmamento anuncia a obra das Suas mãos. Um dia faz declaração a outro dia, e uma noite mostra sabedoria a outra noite. Sem linguagem, sem fala, ouvem-se as suas vozes em toda a extensão da terra, e as suas palavras até aos confins do mundo.\n\nSejam agradáveis as palavras da minha boca e a meditação do meu coração, perante a tua face, Senhor, Rocha minha e Libertador meu!\n\nNeles pôs uma tenda para o sol, que qual noivo que sai do seu tálamo, e se alegra como um herói a correr o seu caminho. A sua saída é desde uma extremidade dos céus, e o seu curso até a outra extremidade deles; e nada se furta ao seu calor.\n\nSejam agradáveis as palavras da minha boca e a meditação do meu coração perante a tua face, Senhor, Rocha minha e Libertador meu!\n\nA lei do Senhor é perfeita e refrigera a alma; o testemunho do Senhor é fiel, e dá sabedoria aos símplices. Os preceitos do Senhor são rectos, e alegram o coração: o mandamento do Senhor é puro e alumia os olhos.\n\nSejam agradáveis as palavras da minha boca e a meditação do meu coração perante a tua face, Senhor, Rocha minha e libertador meu!\n\nO Temor do Senhor é limpo, e permanece eternamente; os juízos do Senhor são verdadeiros e justos juntamente. Mais desejáveis são do que o ouro, sim, do que muito ouro fino; e mais doces do que o mel e o licor dos favos; Também por eles é admoestado o teu servo; e em os guardar há grande recompensa.\n\nSejam agradáveis as palavras da minha boca e a meditação do meu coração perante a tua face, Senhor, Rocha minha e Libertador meu!\n\nQuem pode entender os próprios erros? Expurga-me tu dos que me são ocultos. Também da soberba guarda o teu servo, para que se não assenhoreie de mim; então serei sincero, e ficarei limpo de grande transgressão.\n\nSejam agradáveis as palavras da minha boca e a meditação do meu coração perante a tua face, Senhor, Rocha minha e Libertador meu!"
+ },
+ {
+  "id": "salmo-24",
+  "type": "salmo",
+  "number": "24",
+  "title": "Salmo 24",
+  "body": "Do Senhor é a terra e a sua plenitude, o mundo e aqueles que nele habitam. Porque ele a fundou sobre os mares, e a firmou sobre os rios.\n\nQuem subirá ao monte do Senhor, ou quem estará no seu lugar santo?\n\nAquele que é limpo de mãos e puro de coração, que não entrega a sua alma à vaidade, nem jura enganosamente. Este receberá a bênção do Senhor e a justiça do Deus da sua salvação. Esta é a geração daqueles que buscam, daqueles que buscam a tua face, ó Deus de Jacob.\n\nLevantai, ó portas, as vossas cabeças; levantai-vos, ó entradas eternas, e entrará o Rei da Glória.\n\nQuem é este Rei da Glória?\n\nO Senhor, forte e poderoso, o Senhor poderoso na guerra. Levantai, ó portas, as vossas cabeças, levantai-vos, ó entradas eternas, e entrará o rei da Glória.\n\nQuem é este Rei da Glória?\n\nO Senhor dos Exércitos; ele é o Rei da Glória."
+ },
+ {
+  "id": "salmo-33",
+  "type": "salmo",
+  "number": "33",
+  "title": "Salmo 33",
+  "body": "Regozijai-vos no Senhor, vós, justos, pois aos rectos convém o louvor. Louvai ao Senhor com harpa, cantai a Ele com saltério de dez cordas. Cantai-lhe um cântico novo: tocai bem e com júbilo. Porque a palavra do Senhor é recta, e todas as suas obras são fiéis. Ele ama a justiça e o juízo; a terra está cheia da bondade do Senhor.\n\nSeja a tua misericórdia, Senhor, sobre nós, como em ti esperamos.\n\nPela palavra do Senhor foram feitos os céus, e todo o exército deles pelo espírito da sua boca. Ele ajunta as águas do mar como num montão; Põe os abismos em tesouros. Tema toda a terra ao Senhor; temam-no todos os moradores do mundo, porque falou, e tudo se fez; mandou, e logo tudo apareceu.\n\nSeja a tua misericórdia, Senhor, sobre nós, como em ti esperamos.\n\nO Senhor desfaz o conselho das nações, quebranta os intentos dos povos. O conselho do Senhor permanece para sempre; os intentos do seu coração de geração em geração. Bem-aventurada é a nação cujo Deus é o Senhor, e o povo que Ele escolheu para sua herança.\n\nSeja a tua misericórdia, Senhor, sobre nós, como em ti esperamos.\n\nO Senhor olha desde os céus e está vendo a todos os filhos dos homens; da sua morada, contempla todos os moradores da terra. Ele é que forma o coração de todos eles, que contempla todas as suas obras.\n\nSeja a tua misericórdia, Senhor, sobre nós, como em ti esperamos.\n\nEis que os olhos do Senhor estão sobre os que o temem, sobre os que esperam na sua misericórdia; para livrar as suas almas da morte, e para os conservar vivos na fome. A nossa alma espera no Senhor: Ele é o nosso\n\nauxílio e o nosso escudo, pois nele se alegra o nosso coração, porquanto temos confiado no seu santo nome.\n\nSeja a tua misericórdia, Senhor, sobre nós, como em ti esperamos."
+ },
+ {
+  "id": "salmo-34",
+  "type": "salmo",
+  "number": "34",
+  "title": "Salmo 34",
+  "body": "Louvarei ao Senhor em todo o tempo: o seu louvor estará continuamente na minha boca. A minha alma se gloriará no Senhor: os mansos o ouvirão e se alegrarão.\n\nEngrandecei ao Senhor comigo, e juntos exaltemos o seu nome. Busquei ao Senhor, e ele me respondeu: livrou-me de todos os meus temores. Olharam para ele, e foram iluminados; e os seus rostos não ficarão confundidos.\n\nClamou este pobre, e o Senhor o ouviu, e o salvou de todas as suas angústias. O anjo do Senhor acampa-se ao redor dos que o temem, e os livra. Provai e vede que o Senhor é bom; bem-aventurado o homem que nele confia. Temei ao Senhor, vós, os seus santos, pois não têm falta alguma aqueles que o temem.\n\nOs filhos dos leões necessitam e sofrem fome, mas aqueles que buscam ao Senhor de nada têm falta.\n\nVinde, meninos, ouvi-me: eu vos ensinarei o temor do Senhor. Quem é o homem que deseja a vida, que quer largos dias para ver o bem? Guarda a tua língua do mal, e os teus lábios de falarem enganosamente. Aparta-te do mal; e faze o bem; procura a Paz; e segue-a.\n\nOs olhos do Senhor estão sobre os justos e os seus ouvidos atentos ao seu clamor. A face do Senhor está contra os que fazem o mal, para desarreigar da terra a memória deles.\n\nOs justos clamam, e o Senhor os ouve, e os livra de todas as suas angústias. Perto está o Senhor dos que têm o coração quebrantado, e salva os contritos de espírito.\n\nMuitas são as aflições do justo, mas o senhor o livra de todas. Ele lhe guarda todos os seus ossos; nem sequer um deles se quebra.\n\nA malícia matará o ímpio, e os que aborrecem o justo serão punidos.\n\nO senhor resgata a alma dos seus servos, e nenhum dos que nele confiam, será condenado."
+ },
+ {
+  "id": "salmo-46",
+  "type": "salmo",
+  "number": "46",
+  "title": "Salmo 46",
+  "body": "Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia. Pelo que não temeremos, ainda que a terra se mude, e ainda que os montes se transportem para o meio dos mares. Ainda que as águas rujam e se perturbem, ainda que os montes se abalem pela sua braveza.\n\nO senhor dos Exércitos está connosco; o Deus de Jacob é o nosso refúgio.\n\nHá um rio cujas correntes alegram a cidade de Deus, o santuário das moradas do Altíssimo. Deus está no meio dela; não será abalada: Deus a ajudará, ao romper da manhã. As nações se embraveceram; os reinos se moveram; Ele levantou a sua voz e a terra se derreteu.\n\nO Senhor dos Exércitos está connosco; o Deus de Jacob é o nosso refúgio.\n\nVinde, contemplai as obras do Senhor, que desolações tem feito na terra! Ele faz cessar as guerras até o fim da terra: quebra o arco e corta a lança; queima os carros no fogo. Aquietai-vos, e sabei que eu sou Deus; serei exaltado entre as nações; serei exaltado sobre a terra.\n\nO Senhor dos Exércitos está connosco; o Deus de Jacob é o nosso refúgio."
+ },
+ {
+  "id": "salmo-67",
+  "type": "salmo",
+  "number": "67",
+  "title": "Salmo 67",
+  "body": "Deus tenha misericórdia de nós e nos abençoe; e faça resplandecer o seu rosto sobre nós. Para que se conheça na terra o teu caminho e em todas as nações a tua salvação.\n\nLouvem-te a ti, ó Deus, os povos; louvem-te os povos todos.\n\nAlegrem-se e regozijem-se as nações, pois julgarás os povos com equidade, e governarás as nações sobre a terra. Louvem-te a ti, ó Deus, os povos; louvem-te os povos todos.\n\nEntão a terra dará o seu fruto; e Deus, o nosso Deus, nos abençoará. Deus nos abençoara, e todas as extremidades da terra o temerão.\n\nLouvem-te a ti, ó Deus, os povos; louvem-te os povos todos."
+ },
+ {
+  "id": "salmo-90",
+  "type": "salmo",
+  "number": "90",
+  "title": "Salmo 90",
+  "body": "Senhor, tu tens sido o nosso refúgio, de geração em geração.\n\nAntes que os montes nascessem, ou que Tu formasses a terra e o mundo; sim, de eternidade à eternidade, Tu és Deus.\n\nTu reduzes o homem à destruição, e dizes: Volvei, filhos dos homens.\n\nPorque mil anos são, aos teus olhos, como o dia de ontem que passou, e como a vigília da noite. Tu os levas como corrente da água: são como um sono: são como a erva que cresce de madrugada. De madrugada cresce e floresce; à tarde corta-se e seca. Pois somos consumidos pela tua ira, e pelo teu furor somos angustiados.\n\nDiante de Ti puseste as nossas iniquidades; os nossos pecados ocultos à luz do teu rosto.\n\nPois todos os nossos dias vão passando na tua indignação; acabam-se os nossos anos como um conto ligeiro. A duração da nossa vida é de setenta\n\nanos, e se alguns, pela sua robustez, chegam a oitenta anos, o melhor deles é canseira e enfado, pois passa rapidamente, e nós voamos.\n\nQuem conhece o poder da tua ira? E a tua cólera segundo o temor que te é devido?\n\nEnsina-nos, «Senhor», a contar os nossos dias, de tal maneira que alcancemos corações sábios. Volta-te para nós, Senhor; até quando? Aplaca-te para com os teus servos. Sacia-nos de madrugada com a tua benignidade, para que nos regozijemos, e nos alegremos, todos os nossos dias.\n\nAlegra-nos pelos dias em que nos afligiste e pelos anos em que vimos o mal.\n\nApareça a tua obra aos teus servos, e a tua glória sobre seus filhos. E seja sobre nós a graça do Senhor, nosso Deus; e confirma sobre nós a obra das nossas mãos: sim, confirma a obra das nossas mãos."
+ },
+ {
+  "id": "salmo-96",
+  "type": "salmo",
+  "number": "96",
+  "title": "Salmo 96",
+  "body": "Cantai ao Senhor um cântico novo, cantai ao Senhor todos os moradores da terra. Cantai ao Senhor, bendizei o seu nome; anunciai a sua salvação de dia em dia.\n\nAnunciai entre as nações a sua glória; entre todos os povos as suas maravilhas.\n\nPorque grande é o Senhor, e digno de louvor, mais tremendo do que todos os deuses.\n\nPorque todos os deuses dos povos são coisas vãs, mas o Senhor fez os céus. Glória e majestade estão ante a sua face, força e formosura no seu santuário.\n\nDai ao Senhor, ó famílias dos povos, dai ao Senhor glória e força. Dai ao Senhor a glória devida ao seu nome; trazei oferendas, entrai nos seus\n\nátrios. Adorai ao Senhor na beleza da Sua santidade; tremei diante d’Ele todos os moradores da terra.\n\nDizei entre as nações: O Senhor reina; o mundo, também, se firmará, para que se não abale; ele julgará os povos com rectidão.\n\nAlegre-se o campo, com tudo o que há nele; então se regozijarão todas as árvores do bosque, ante a face do Senhor, porque vem.\n\nPorque vem a julgar a terra; julgará o mundo com justiça e os povos com a sua verdade."
+ },
+ {
+  "id": "salmo-100",
+  "type": "salmo",
+  "number": "100",
+  "title": "Salmo 100",
+  "body": "Celebrai com júbilo ao Senhor, todos os moradores da terra. Servi ao Senhor com alegria; e apresentai-vos a Ele com cânticos.\n\nSabei que o Senhor é Deus: foi Ele, e não nós, que nos fez povo seu e ovelhas do seu pasto.\n\nEntrai pelas portas dele com louvor, e em seus átrios com hinos; louvai-O, e bendizei o seu nome.\n\nPorque o Senhor é bom, e eterna a sua misericórdia; e a sua verdade estende-se de geração em geração."
+ },
+ {
+  "id": "salmo-103",
+  "type": "salmo",
+  "number": "103",
+  "title": "Salmo 103",
+  "body": "Bendize, ó minha alma, ao Senhor, e tudo o que há em mim bendiga o Seu santo nome.\n\nBendize, ó minha alma, ao Senhor, e não te esqueças de nenhum dos seus benefícios.\n\nÉ Ele que perdoa todas as tuas iniquidades, e sara todas as tuas enfermidades; quem redime a tua vida da perdição, e te coroa de\n\nbenignidade e de misericórdia; quem enche a tua boca de bens, de sorte que a tua mocidade se renova como a águia.\n\nO Senhor faz justiça e juízo a todos os oprimidos. Fez notórios os seus caminhos a Moisés, e os seus feitos aos filhos de Israel.\n\nMisericordioso e piedoso é o Senhor; longânimo e grande em benignidade. Não repreenderá perpetuamente, nem para sempre conservará a sua ira.\n\nNão nos tratou segundo os nossos pecados, nem nos retribuiu segundo as nossas iniquidades.\n\nPois quanto o céu está elevado acima da terra, assim é grande a sua misericórdia para com os que o temem.\n\nQuanto está longe o oriente do ocidente, assim afasta de nós as nossas transgressões.\n\nComo um pai se compadece dos seus filhos, assim o Senhor se compadece daqueles que o temem. Pois Ele conhece a nossa estrutura; lembra-se de que somos pó.\n\nPorque o homem, são seus dias como a erva; como a flor do campo, assim floresce: pois, passando por ela o vento, logo se vai, e o seu lugar não se conhece mais.\n\nMas a misericórdia do Senhor é de eternidade à eternidade, sobre aqueles que o temem, e a sua justiça sobre os filhos dos filhos; sobre aqueles que guardam o seu concerto, e sobre os que se lembram dos seus mandamentos para os cumprirem.\n\nBendizei ao Senhor, todos os seus exércitos, vós ministros seus, que executais o seu beneplácito. Bendizei ao Senhor todas as suas obras, em todos os lugares do seu domínio. Bendize, ó minha alma, ao Senhor."
+ },
+ {
+  "id": "salmo-115",
+  "type": "salmo",
+  "number": "115",
+  "title": "Salmo 115",
+  "body": "Não a nós, Senhor, não a nós, mas ao teu nome dá glória, por amor da sua benignidade e da Tua verdade. Por que dirão as nações: Onde está o Seu Deus? Mas o nosso Deus está nos céus; faz tudo o que lhe apraz.\n\nOs ídolos deles são prata e ouro, obra das mãos dos homens. Têm boca, mas não falam; têm olhos, mas não vêem; têm ouvidos, mas não ouvem; nariz têm, mas não cheiram; têm mãos, mas não apalpam; têm pés, mas não andam; nem som algum sai da sua garganta.\n\nTornem-se semelhantes a eles os que os fazem, e todos os que neles confiam.\n\nConfia, ó Israel, no Senhor:\n\nEle é seu auxílio e seu escudo.\n\nCasa de Aarão, confia no Senhor:\n\nEle é seu auxilio e seu escudo.\n\nO Senhor, que se lembrou de nós, abençoará; abençoará a casa de Aarão.\n\nAbençoará os que temem ao Senhor, tanto pequenos como grandes.\n\nO Senhor vos aumentará cada vez mais, a vós e a vossos filhos. Sede benditos do Senhor, que fez os céus e a terra. Os céus são os céus do Senhor; Mas a terra deu-a ele aos filhos dos homens.\n\nNós bendiremos ao Senhor, desde agora e para sempre. Louvai ao Senhor.\n\nCREDO APOSTÓLICO\n\nCreio em Deus Pai, Todo-Poderoso, Criador do Céu e da Terra;\n\nEm Jesus Cristo seu Único Filho, nosso Senhor; o qual foi concebido por obra do Espírito Santo; nasceu da Virgem Maria; Padeceu sob o poder de Pôncio Pilatos; foi crucificado, morto e sepultado; no terceiro dia ressurgiu dos mortos, subiu aos céus, e está sentado à mão direita de Deus Pai, Todo-Poderoso, donde há-de vir julgar os vivos e os mortos.\n\nCreio no Espírito Santo; na Santa Igreja Universal; na comunhão dos santos; na remissão dos pecados; na ressurreição do corpo; e na vida eterna Ámen.\n\n__________ o0o __________\n\nORAÇÃO DO SENHOR\n\nPai nosso que estás nos céus, Santificado seja o teu nome, Venha o teu reino, Seja feita a tua vontade, Assim na terra como no céu, O pão nosso de cada dia nos dá hoje, Perdoa-nos as nossas dívidas, Assim como nós perdoamos aos nossos devedores; E não nos deixes cair em tentação; Mas livra-nos do mal;"
+ }
+]
