@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Delete, Hash, X } from "lucide-react";
+import { Delete, Keyboard, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { findHymn, LANGUAGES } from "@/lib/hymns";
 
