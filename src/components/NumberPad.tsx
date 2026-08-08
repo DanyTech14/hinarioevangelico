@@ -17,6 +17,30 @@ function orderedLanguages() {
   return [...ORDER.filter((l) => LANGUAGES.includes(l)), ...rest];
 }
 
+const ROMAN: [number, string][] = [
+  [1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"],
+  [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+];
+
+function toRoman(n: number) {
+  let out = "";
+  for (const [v, sym] of ROMAN) {
+    while (n >= v) {
+      out += sym;
+      n -= v;
+    }
+  }
+  return out;
+}
+
+function lookup(lang: string, value: string) {
+  const direct = findHymn(lang, value);
+  if (direct) return direct;
+  const n = parseInt(value, 10);
+  if (!Number.isNaN(n) && n > 0) return findHymn(lang, toRoman(n));
+  return undefined;
+}
+
 export function NumberPad({ language }: Props) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
@@ -26,7 +50,7 @@ export function NumberPad({ language }: Props) {
   const navigate = useNavigate();
 
   const langs = useMemo(orderedLanguages, []);
-  const match = value ? findHymn(lang, value) : undefined;
+  const match = value ? lookup(lang, value) : undefined;
 
   // Segue o filtro escolhido na página
   useEffect(() => {
