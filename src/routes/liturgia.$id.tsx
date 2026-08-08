@@ -32,7 +32,7 @@ export const Route = createFileRoute("/liturgia/$id")({
 });
 
 function LiturgyDetail() {
-  const item = Route.useLoaderData();
+  const item = Route.useLoaderData()!;
   const [size, setSize] = useState(20);
 
   const index = LITURGY.findIndex((i) => i.id === item.id);

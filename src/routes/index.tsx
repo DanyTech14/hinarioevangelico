@@ -59,22 +59,22 @@ function Home() {
         </div>
       </header>
 
-      <section className="mx-auto max-w-6xl px-4 pt-8 sm:pt-12 pb-6 sm:pb-8 text-center">
-        <p className="uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[10px] sm:text-xs text-accent-foreground/80 font-semibold mb-3">
+      <section className="mx-auto max-w-6xl px-4 pt-10 sm:pt-16 pb-8 sm:pb-10 text-center">
+        <p className="uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[10px] sm:text-xs text-muted-foreground font-semibold mb-4">
           Hinário Evangélico Completo
         </p>
-        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] sm:leading-[1.05] text-balance">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] sm:leading-[1] text-balance">
           Cante com a congregação,
           <br />
           <span className="italic text-primary">em qualquer momento do culto.</span>
         </h1>
-        <p className="mt-4 sm:mt-5 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
+        <p className="mt-5 sm:mt-6 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2 leading-relaxed">
           {HYMNS.length} hinos em {LANGUAGES.length} línguas. Pesquise por número, título ou letra
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
 
-        <div className="mt-5">
-          <Button asChild variant="outline" size="sm" className="rounded-full gap-2">
+        <div className="mt-6">
+          <Button asChild variant="outline" size="sm" className="rounded-full gap-2 px-4">
             <Link to="/liturgia">
               <ScrollText className="h-4 w-4" />
               Litanias, Salmos e Invocatórias
@@ -82,21 +82,20 @@ function Home() {
           </Button>
         </div>
 
-
-        <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="mt-8 sm:mt-10 max-w-2xl mx-auto">
+          <div className="relative group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
             <Input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Procurar: número, título ou letra…"
               inputMode="search"
               enterKeyHint="search"
-              className="h-12 sm:h-14 pl-12 pr-4 text-base sm:text-lg rounded-xl border-2 bg-card shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
+              className="h-12 sm:h-14 pl-12 pr-4 text-base sm:text-lg rounded-2xl border-2 bg-card shadow-sm transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_12%,transparent)]"
             />
           </div>
 
-          <div className="mt-4 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
+          <div className="mt-5 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
               <Button
                 variant={onlyFavs ? "default" : "outline"}
@@ -135,14 +134,16 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-20">
-        <div className="flex items-end justify-between mb-4">
-          <h2 className="font-display text-2xl font-semibold flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" />
-            {query ? `${results.length} resultado(s)` : `Hinos em ${lang}`}
+      <section className="mx-auto max-w-6xl px-4 pb-24">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 mb-5 sm:flex sm:flex-wrap sm:justify-between sm:gap-4">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold flex items-center gap-2 min-w-0">
+            <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary shrink-0" />
+            <span className="truncate">
+              {query ? `${results.length} resultado(s)` : `Hinos em ${lang}`}
+            </span>
           </h2>
           {results.length > visible.length && (
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground shrink-0">
               A mostrar os primeiros {visible.length}. Refine a pesquisa.
             </p>
           )}
@@ -155,20 +156,20 @@ function Home() {
               : "Nenhum hino encontrado."}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visible.map((h) => {
               const fav = isFavorite(h.language, h.number);
               return (
                 <div
                   key={`${h.language}-${h.number}`}
-                  className="group relative rounded-lg border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+                  className="group relative rounded-xl border border-border bg-card hover:border-primary hover:shadow-md hover:-translate-y-0.5 transition-all"
                 >
                   <Link
                     to="/hino/$language/$number"
                     params={{ language: h.language, number: h.number }}
                     className="p-4 pr-12 flex items-start gap-3"
                   >
-                    <div className="shrink-0 h-12 w-12 rounded-md bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <div className="shrink-0 h-12 w-12 rounded-xl bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       {h.number}
                     </div>
                     <div className="min-w-0">
@@ -190,7 +191,7 @@ function Home() {
                     }}
                     aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
                     aria-pressed={fav}
-                    className="absolute top-2 right-2 h-9 w-9 grid place-items-center rounded-md hover:bg-accent transition-colors"
+                    className="absolute top-2 right-2 h-9 w-9 grid place-items-center rounded-lg hover:bg-accent transition-colors"
                   >
                     <Star className={`h-4 w-4 ${fav ? "fill-primary text-primary" : "text-muted-foreground"}`} />
                   </button>
