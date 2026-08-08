@@ -59,22 +59,22 @@ function Home() {
         </div>
       </header>
 
-      <section className="mx-auto max-w-6xl px-4 pt-8 sm:pt-12 pb-6 sm:pb-8 text-center">
-        <p className="uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[10px] sm:text-xs text-accent-foreground/80 font-semibold mb-3">
+      <section className="mx-auto max-w-6xl px-4 pt-10 sm:pt-16 pb-8 sm:pb-10 text-center">
+        <p className="uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[10px] sm:text-xs text-muted-foreground font-semibold mb-4">
           Hinário Evangélico Completo
         </p>
-        <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.1] sm:leading-[1.05] text-balance">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] sm:leading-[1] text-balance">
           Cante com a congregação,
           <br />
           <span className="italic text-primary">em qualquer momento do culto.</span>
         </h1>
-        <p className="mt-4 sm:mt-5 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2">
+        <p className="mt-5 sm:mt-6 text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-2 leading-relaxed">
           {HYMNS.length} hinos em {LANGUAGES.length} línguas. Pesquise por número, título ou letra
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
 
-        <div className="mt-5">
-          <Button asChild variant="outline" size="sm" className="rounded-full gap-2">
+        <div className="mt-6">
+          <Button asChild variant="outline" size="sm" className="rounded-full gap-2 px-4">
             <Link to="/liturgia">
               <ScrollText className="h-4 w-4" />
               Litanias, Salmos e Invocatórias
@@ -82,21 +82,20 @@ function Home() {
           </Button>
         </div>
 
-
-        <div className="mt-6 sm:mt-8 max-w-2xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="mt-8 sm:mt-10 max-w-2xl mx-auto">
+          <div className="relative group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
             <Input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Procurar: número, título ou letra…"
               inputMode="search"
               enterKeyHint="search"
-              className="h-12 sm:h-14 pl-12 pr-4 text-base sm:text-lg rounded-xl border-2 bg-card shadow-sm focus-visible:ring-2 focus-visible:ring-primary"
+              className="h-12 sm:h-14 pl-12 pr-4 text-base sm:text-lg rounded-2xl border-2 bg-card shadow-sm transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_12%,transparent)]"
             />
           </div>
 
-          <div className="mt-4 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
+          <div className="mt-5 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
               <Button
                 variant={onlyFavs ? "default" : "outline"}
