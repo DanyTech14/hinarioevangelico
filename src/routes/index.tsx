@@ -134,14 +134,14 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-20">
-        <div className="flex items-end justify-between mb-4">
-          <h2 className="font-display text-2xl font-semibold flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" />
+      <section className="mx-auto max-w-6xl px-4 pb-24">
+        <div className="flex items-end justify-between mb-5 gap-4">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold flex items-center gap-2">
+            <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
             {query ? `${results.length} resultado(s)` : `Hinos em ${lang}`}
           </h2>
           {results.length > visible.length && (
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground shrink-0">
               A mostrar os primeiros {visible.length}. Refine a pesquisa.
             </p>
           )}
@@ -154,20 +154,20 @@ function Home() {
               : "Nenhum hino encontrado."}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visible.map((h) => {
               const fav = isFavorite(h.language, h.number);
               return (
                 <div
                   key={`${h.language}-${h.number}`}
-                  className="group relative rounded-lg border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+                  className="group relative rounded-xl border border-border bg-card hover:border-primary hover:shadow-md hover:-translate-y-0.5 transition-all"
                 >
                   <Link
                     to="/hino/$language/$number"
                     params={{ language: h.language, number: h.number }}
                     className="p-4 pr-12 flex items-start gap-3"
                   >
-                    <div className="shrink-0 h-12 w-12 rounded-md bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <div className="shrink-0 h-12 w-12 rounded-xl bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       {h.number}
                     </div>
                     <div className="min-w-0">
@@ -189,7 +189,7 @@ function Home() {
                     }}
                     aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
                     aria-pressed={fav}
-                    className="absolute top-2 right-2 h-9 w-9 grid place-items-center rounded-md hover:bg-accent transition-colors"
+                    className="absolute top-2 right-2 h-9 w-9 grid place-items-center rounded-lg hover:bg-accent transition-colors"
                   >
                     <Star className={`h-4 w-4 ${fav ? "fill-primary text-primary" : "text-muted-foreground"}`} />
                   </button>
