@@ -135,10 +135,12 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-24">
-        <div className="flex items-end justify-between mb-5 gap-4">
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold flex items-center gap-2">
-            <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
-            {query ? `${results.length} resultado(s)` : `Hinos em ${lang}`}
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 mb-5 sm:flex sm:flex-wrap sm:justify-between sm:gap-4">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold flex items-center gap-2 min-w-0">
+            <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary shrink-0" />
+            <span className="truncate">
+              {query ? `${results.length} resultado(s)` : `Hinos em ${lang}`}
+            </span>
           </h2>
           {results.length > visible.length && (
             <p className="text-sm text-muted-foreground shrink-0">
