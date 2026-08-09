@@ -30,55 +30,54 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-body: "Karla", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.5rem;
-  /* Warm parchment */
-  --background: oklch(0.975 0.012 85);
-  --foreground: oklch(0.22 0.02 50);
-  --card: oklch(0.99 0.008 85);
-  --card-foreground: oklch(0.22 0.02 50);
-  --popover: oklch(0.99 0.008 85);
-  --popover-foreground: oklch(0.22 0.02 50);
-  /* Deep burgundy / liturgical */
-  --primary: oklch(0.38 0.13 25);
-  --primary-foreground: oklch(0.98 0.01 85);
-  --secondary: oklch(0.93 0.02 80);
-  --secondary-foreground: oklch(0.28 0.04 40);
-  --muted: oklch(0.94 0.015 80);
-  --muted-foreground: oklch(0.48 0.02 60);
-  --accent: oklch(0.78 0.12 75);  /* gold */
-  --accent-foreground: oklch(0.22 0.02 50);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.01 85);
-  --border: oklch(0.88 0.02 75);
-  --input: oklch(0.9 0.015 75);
-  --ring: oklch(0.55 0.1 35);
+  --radius: 0.75rem;
+  /* Warm Sand — claro, acolhedor, calmo */
+  --background: #faf8f5;
+  --foreground: #5c4f3d;
+  --card: #f0ebe3;
+  --card-foreground: #5c4f3d;
+  --popover: #f0ebe3;
+  --popover-foreground: #5c4f3d;
+  --primary: #8b7355;
+  --primary-foreground: #faf8f5;
+  --secondary: #f0ebe3;
+  --secondary-foreground: #5c4f3d;
+  --muted: #f0ebe3;
+  --muted-foreground: #9e8b73;
+  --accent: #c9b99a;
+  --accent-foreground: #3d3226;
+  --destructive: #a94442;
+  --destructive-foreground: #faf8f5;
+  --border: #e3d9cb;
+  --input: #e3d9cb;
+  --ring: #c9b99a;
 }
 
 .dark {
-  /* Near-black with calm, desaturated blue — restful worship mode */
-  --background: oklch(0.16 0.015 255);
-  --foreground: oklch(0.93 0.005 250);
-  --card: oklch(0.21 0.018 255);
-  --card-foreground: oklch(0.94 0.005 250);
-  --popover: oklch(0.21 0.018 255);
-  --popover-foreground: oklch(0.94 0.005 250);
-  --primary: oklch(0.68 0.055 250); /* muted steel blue */
-  --primary-foreground: oklch(0.15 0.015 255);
-  --secondary: oklch(0.24 0.018 255);
-  --secondary-foreground: oklch(0.93 0.005 250);
-  --muted: oklch(0.23 0.015 255);
-  --muted-foreground: oklch(0.68 0.012 250);
-  --accent: oklch(0.32 0.03 250);
-  --accent-foreground: oklch(0.95 0.005 250);
-  --destructive: oklch(0.55 0.14 25);
-  --destructive-foreground: oklch(0.97 0.005 250);
-  --border: oklch(0.27 0.018 255);
-  --input: oklch(0.25 0.018 255);
-  --ring: oklch(0.60 0.05 250);
+  /* Noite acolhedora — quase preto com acentos areia/dourado, sem azul */
+  --background: #171412;
+  --foreground: #f0ebe3;
+  --card: #211e1b;
+  --card-foreground: #f0ebe3;
+  --popover: #211e1b;
+  --popover-foreground: #f0ebe3;
+  --primary: #c9a84c;
+  --primary-foreground: #171412;
+  --secondary: #2a2622;
+  --secondary-foreground: #f0ebe3;
+  --muted: #2a2622;
+  --muted-foreground: #a89b85;
+  --accent: #3d3226;
+  --accent-foreground: #f0ebe3;
+  --destructive: #c96b6b;
+  --destructive-foreground: #faf8f5;
+  --border: #3a3530;
+  --input: #3a3530;
+  --ring: #c9a84c;
 }
 
 @layer base {
@@ -90,13 +89,13 @@
     color: var(--color-foreground);
     font-family: var(--font-body);
     background-image:
-      radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--accent) 8%, transparent), transparent 50%),
-      radial-gradient(circle at 80% 100%, color-mix(in oklab, var(--primary) 6%, transparent), transparent 50%);
+      radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 55%),
+      radial-gradient(circle at 80% 100%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 55%);
     background-attachment: fixed;
   }
   .dark body {
     background-image:
-      radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--primary) 4%, transparent), transparent 60%);
+      radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--primary) 6%, transparent), transparent 60%);
   }
   h1, h2, h3, .font-display {
     font-family: var(--font-display);

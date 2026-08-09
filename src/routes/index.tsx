@@ -28,9 +28,16 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const ORDER = ["Todos", "Português", "Umbundu", "Adicionais (PT/Umbundu)"];
+
+function orderedLanguages() {
+  const rest = LANGUAGES.filter((l) => !ORDER.includes(l)).sort((a, b) => a.localeCompare(b));
+  return [...ORDER.filter((l) => LANGUAGES.includes(l) || l === "Todos"), ...rest];
+}
+
 function Home() {
   const [query, setQuery] = useState("");
-  const [lang, setLang] = useState<string>("Português");
+  const [lang, setLang] = useState<string>("Todos");
   const [onlyFavs, setOnlyFavs] = useState(false);
   const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
 
@@ -42,12 +49,14 @@ function Home() {
   }, [query, lang, onlyFavs, favIds]);
   const visible = results.slice(0, 200);
 
+  const langs = useMemo(orderedLanguages, []);
+
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-30 backdrop-blur-md bg-background/80 border-b border-border">
-        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="h-9 w-9 rounded-md bg-primary text-primary-foreground grid place-items-center shadow-sm">
+            <div className="h-9 w-9 rounded-xl bg-primary text-primary-foreground grid place-items-center shadow-sm">
               <Music className="h-5 w-5" />
             </div>
             <div className="leading-tight">
@@ -59,7 +68,7 @@ function Home() {
         </div>
       </header>
 
-      <section className="mx-auto max-w-6xl px-4 pt-10 sm:pt-16 pb-8 sm:pb-10 text-center">
+      <section className="mx-auto max-w-5xl px-4 pt-10 sm:pt-16 pb-8 sm:pb-10 text-center">
         <p className="uppercase tracking-[0.22em] sm:tracking-[0.28em] text-[10px] sm:text-xs text-muted-foreground font-semibold mb-4">
           Hinário Evangélico Completo
         </p>
@@ -82,7 +91,7 @@ function Home() {
           </Button>
         </div>
 
-        <div className="mt-8 sm:mt-10 max-w-2xl mx-auto">
+        <div className="mt-8 sm:mt-10 max-w-2xl mx-auto space-y-5">
           <div className="relative group">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
             <Input
@@ -91,11 +100,11 @@ function Home() {
               placeholder="Procurar: número, título ou letra…"
               inputMode="search"
               enterKeyHint="search"
-              className="h-12 sm:h-14 pl-12 pr-4 text-base sm:text-lg rounded-2xl border-2 bg-card shadow-sm transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_12%,transparent)]"
+              className="h-12 sm:h-14 pl-12 pr-12 text-base sm:text-lg rounded-2xl border-2 bg-card shadow-sm transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_12%,transparent)]"
             />
           </div>
 
-          <div className="mt-5 -mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
+          <div className="-mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:flex-wrap sm:justify-center gap-2 w-max sm:w-auto mx-auto">
               <Button
                 variant={onlyFavs ? "default" : "outline"}
@@ -107,18 +116,7 @@ function Home() {
                 <Star className={`h-3.5 w-3.5 ${onlyFavs ? "fill-current" : ""}`} />
                 Favoritos{favIds.length > 0 ? ` (${favIds.length})` : ""}
               </Button>
-              {[
-                "Todos",
-                "Português",
-                "Umbundu",
-                "Adicionais (PT/Umbundu)",
-                ...LANGUAGES.filter(
-                  (l) =>
-                    l !== "Português" &&
-                    l !== "Umbundu" &&
-                    l !== "Adicionais (PT/Umbundu)",
-                ),
-              ].map((l) => (
+              {langs.map((l) => (
                 <Button
                   key={l}
                   variant={lang === l ? "default" : "outline"}
@@ -134,7 +132,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-24">
+      <section className="mx-auto max-w-5xl px-4 pb-28">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-3 mb-5 sm:flex sm:flex-wrap sm:justify-between sm:gap-4">
           <h2 className="font-display text-2xl sm:text-3xl font-semibold flex items-center gap-2 min-w-0">
             <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-primary shrink-0" />
@@ -159,27 +157,31 @@ function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visible.map((h) => {
               const fav = isFavorite(h.language, h.number);
+              const preview = h.body.replace(/\s+/g, " ").trim();
               return (
                 <div
                   key={`${h.language}-${h.number}`}
-                  className="group relative rounded-xl border border-border bg-card hover:border-primary hover:shadow-md hover:-translate-y-0.5 transition-all"
+                  className="group relative rounded-2xl border border-border bg-card hover:border-primary transition-colors cursor-pointer"
                 >
                   <Link
                     to="/hino/$language/$number"
                     params={{ language: h.language, number: h.number }}
-                    className="p-4 pr-12 flex items-start gap-3"
+                    className="p-4 flex items-start gap-4"
                   >
-                    <div className="shrink-0 h-12 w-12 rounded-xl bg-secondary text-secondary-foreground grid place-items-center font-display text-xl font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <span className="font-display text-2xl font-semibold text-primary/40 group-hover:text-primary transition-colors shrink-0 w-10">
                       {h.number}
-                    </div>
-                    <div className="min-w-0">
+                    </span>
+                    <div className="min-w-0 flex-1">
                       {h.category && (
                         <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate">
                           {h.category}
                         </p>
                       )}
                       <p className="font-display text-lg leading-snug truncate">{h.title}</p>
-                      <p className="text-xs text-muted-foreground">{h.language}</p>
+                      <p className="text-xs text-muted-foreground line-clamp-1 italic mt-0.5">
+                        {preview.slice(0, 60)}
+                        {preview.length > 60 ? "…" : ""}
+                      </p>
                     </div>
                   </Link>
                   <button

@@ -62,18 +62,18 @@ function LiturgyIndex() {
           {LITURGY.length} textos litúrgicos para ler em conjunto durante o culto.
         </p>
 
-        <div className="mt-6 max-w-2xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <div className="mt-6 max-w-2xl mx-auto space-y-5">
+          <div className="relative group">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
             <Input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Procurar por título ou texto…"
               inputMode="search"
-              className="h-12 pl-12 pr-4 text-base rounded-xl border-2 bg-card shadow-sm"
+              className="h-12 pl-12 pr-4 text-base rounded-2xl border-2 bg-card shadow-sm transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:shadow-[0_0_0_4px_color-mix(in_oklab,var(--primary)_12%,transparent)]"
             />
           </div>
-          <div className="mt-4 -mx-4 px-4 overflow-x-auto scrollbar-none">
+          <div className="-mx-4 px-4 overflow-x-auto sm:overflow-visible scrollbar-none">
             <div className="flex sm:justify-center gap-2 w-max sm:w-auto mx-auto">
               {(["Todos", ...KINDS] as const).map((k) => (
                 <Button
