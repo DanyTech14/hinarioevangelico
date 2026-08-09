@@ -23,16 +23,16 @@ export const Route = createFileRoute("/liturgia/$id")({
       ],
     };
   },
-  loader: ({ params }): { item: LiturgyItem } => {
-    const item = findLiturgy(params.id);
-    if (!item) throw notFound();
-    return { item };
+  loader: ({ params }) => {
+    if (!findLiturgy(params.id)) throw notFound();
+    return null;
   },
   component: LiturgyDetail,
 });
 
 function LiturgyDetail() {
-  const { item } = Route.useLoaderData();
+  const { id } = Route.useParams();
+  const item = findLiturgy(id) as LiturgyItem;
   const [size, setSize] = useState(20);
 
   const index = LITURGY.findIndex((i) => i.id === item.id);
