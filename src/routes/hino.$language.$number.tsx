@@ -69,7 +69,7 @@ function HymnPage() {
         <header className="sticky top-0 z-30 backdrop-blur-md bg-background/80 border-b border-border">
           <div className="mx-auto max-w-5xl px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-1 sm:gap-2">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="gap-2 px-2 sm:px-3">
+              <Button variant="ghost" size="sm" className="gap-2 px-2 sm:px-3 rounded-xl">
                 <Home className="h-4 w-4" /> <span className="hidden xs:inline sm:inline">Início</span>
               </Button>
             </Link>
@@ -79,6 +79,7 @@ function HymnPage() {
                 size="icon"
                 onClick={() => setSize((s) => Math.max(16, s - 2))}
                 aria-label="Diminuir texto"
+                className="rounded-xl"
               >
                 <Minus className="h-4 w-4" />
               </Button>
@@ -90,6 +91,7 @@ function HymnPage() {
                 size="icon"
                 onClick={() => setSize((s) => Math.min(72, s + 2))}
                 aria-label="Aumentar texto"
+                className="rounded-xl"
               >
                 <Plus className="h-4 w-4" />
               </Button>
@@ -99,7 +101,7 @@ function HymnPage() {
                 onClick={() => toggleFav(hymn.language, hymn.number)}
                 aria-label={fav ? "Remover dos favoritos" : "Adicionar aos favoritos"}
                 aria-pressed={fav}
-                className="ml-1"
+                className="ml-1 rounded-xl"
               >
                 <Star className={`h-4 w-4 ${fav ? "fill-primary text-primary" : ""}`} />
               </Button>
@@ -108,7 +110,7 @@ function HymnPage() {
                 size="sm"
                 onClick={() => shareHymn(hymn)}
                 aria-label="Partilhar no WhatsApp"
-                className="ml-1 gap-1.5"
+                className="ml-1 gap-1.5 rounded-xl"
               >
                 <Share2 className="h-4 w-4" /> <span className="hidden sm:inline">Partilhar</span>
               </Button>
@@ -117,7 +119,7 @@ function HymnPage() {
                 size="icon"
                 onClick={() => setFocus(true)}
                 aria-label="Modo concentração"
-                className="ml-1"
+                className="ml-1 rounded-xl"
               >
                 <Maximize2 className="h-4 w-4" />
               </Button>

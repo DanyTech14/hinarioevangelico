@@ -87,7 +87,7 @@ export function NumberPad({ language }: Props) {
         variant="default"
         size="icon"
         onClick={() => setOpen(true)}
-        className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        className="h-14 w-14 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
         aria-label="Abrir teclado numérico"
       >
         <Keyboard className="h-6 w-6" />
@@ -130,7 +130,7 @@ export function NumberPad({ language }: Props) {
               </div>
             </div>
 
-            <div className="rounded-xl border-2 border-border bg-background px-4 py-3 text-center">
+            <div className="rounded-2xl border-2 border-border bg-background px-4 py-3 text-center">
               <div className="font-display text-4xl font-semibold tabular-nums min-h-[2.5rem]">
                 {value || "—"}
               </div>
@@ -149,7 +149,7 @@ export function NumberPad({ language }: Props) {
                   key={d}
                   variant="secondary"
                   onClick={() => press(d)}
-                  className="h-14 text-2xl font-display"
+                  className="h-14 text-2xl font-display rounded-xl"
                 >
                   {d}
                 </Button>
@@ -157,21 +157,21 @@ export function NumberPad({ language }: Props) {
               <Button
                 variant="outline"
                 onClick={() => setValue("")}
-                className="h-14 text-sm"
+                className="h-14 text-sm rounded-xl"
               >
                 Limpar
               </Button>
               <Button
                 variant="secondary"
                 onClick={() => press("0")}
-                className="h-14 text-2xl font-display"
+                className="h-14 text-2xl font-display rounded-xl"
               >
                 0
               </Button>
               <Button
                 variant="outline"
                 onClick={() => setValue((v) => v.slice(0, -1))}
-                className="h-14"
+                className="h-14 rounded-xl"
                 aria-label="Apagar"
               >
                 <Delete className="h-5 w-5" />
@@ -181,7 +181,7 @@ export function NumberPad({ language }: Props) {
             <Button
               onClick={go}
               disabled={!match}
-              className="mt-3 w-full h-12 text-base"
+              className="mt-3 w-full h-12 text-base rounded-xl"
             >
               {match ? `Abrir ${match.number}. ${match.title}` : "Abrir hino"}
             </Button>
