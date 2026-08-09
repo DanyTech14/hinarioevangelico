@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ArrowLeft, Minus, Plus, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { findLiturgy, liturgyToShareText, LITURGY } from "@/lib/liturgy";
+import { findLiturgy, liturgyToShareText, LITURGY, type LiturgyItem } from "@/lib/liturgy";
 
 export const Route = createFileRoute("/liturgia/$id")({
   head: ({ params }) => {
@@ -23,16 +23,16 @@ export const Route = createFileRoute("/liturgia/$id")({
       ],
     };
   },
-  loader: ({ params }) => {
+  loader: ({ params }): { item: LiturgyItem } => {
     const item = findLiturgy(params.id);
     if (!item) throw notFound();
-    return item;
+    return { item };
   },
   component: LiturgyDetail,
 });
 
 function LiturgyDetail() {
-  const item = Route.useLoaderData()!;
+  const { item } = Route.useLoaderData();
   const [size, setSize] = useState(20);
 
   const index = LITURGY.findIndex((i) => i.id === item.id);
