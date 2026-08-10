@@ -93,14 +93,24 @@ function Home() {
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
 
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           <Button asChild variant="outline" size="sm" className="rounded-full gap-2 px-4">
             <Link to="/liturgia">
               <ScrollText className="h-4 w-4" />
               Litanias, Salmos e Invocatórias
             </Link>
           </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={openRandom}
+            className="rounded-full gap-2 px-4"
+          >
+            <Shuffle className="h-4 w-4" />
+            Hino aleatório
+          </Button>
         </div>
+
 
         <div className="mt-8 sm:mt-10 max-w-2xl mx-auto space-y-5">
           <div className="relative group">
