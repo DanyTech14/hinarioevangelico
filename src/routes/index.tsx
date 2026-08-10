@@ -37,10 +37,20 @@ function orderedLanguages() {
 }
 
 function Home() {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [lang, setLang] = useState<string>("Todos");
   const [onlyFavs, setOnlyFavs] = useState(false);
   const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
+
+  const openRandom = () => {
+    const h = randomHymn(lang);
+    navigate({
+      to: "/hino/$language/$number",
+      params: { language: h.language, number: h.number },
+    });
+  };
+
 
   const results = useMemo(() => {
     const base = searchHymns(query, lang);
