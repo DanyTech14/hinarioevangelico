@@ -178,7 +178,9 @@ function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visible.map((h) => {
               const fav = isFavorite(h.language, h.number);
-              const preview = h.body.replace(/\s+/g, " ").trim();
+              const flat = h.body.replace(/\s+/g, " ").trim();
+              const snippet = lyricSnippet(h.body, query);
+              const preview = snippet ?? flat.slice(0, 60) + (flat.length > 60 ? "…" : "");
               return (
                 <div
                   key={`${h.language}-${h.number}`}
@@ -193,18 +195,22 @@ function Home() {
                       {h.number}
                     </span>
                     <div className="min-w-0 flex-1">
-                      {h.category && (
-                        <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate">
-                          {h.category}
-                        </p>
-                      )}
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate flex items-center gap-1.5">
+                        <Languages className="h-3 w-3 shrink-0 text-primary/70" />
+                        <span className="truncate">
+                          {h.language}
+                          {h.category ? ` · ${h.category}` : ""}
+                        </span>
+                      </p>
                       <p className="font-display text-lg leading-snug truncate">{h.title}</p>
-                      <p className="text-xs text-muted-foreground line-clamp-1 italic mt-0.5">
-                        {preview.slice(0, 60)}
-                        {preview.length > 60 ? "…" : ""}
+                      <p
+                        className={`text-xs line-clamp-2 italic mt-0.5 ${snippet ? "text-foreground/80" : "text-muted-foreground line-clamp-1"}`}
+                      >
+                        {preview}
                       </p>
                     </div>
                   </Link>
+
                   <button
                     type="button"
                     onClick={(e) => {
