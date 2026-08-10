@@ -1,12 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, BookOpen, Music, Star, ScrollText } from "lucide-react";
+import { Search, BookOpen, Music, Star, ScrollText, Shuffle, Languages } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { NumberPad } from "@/components/NumberPad";
-import { HYMNS, LANGUAGES, searchHymns } from "@/lib/hymns";
+import { ScrollTopButton } from "@/components/ScrollTopButton";
+import { HYMNS, LANGUAGES, searchHymns, randomHymn, lyricSnippet } from "@/lib/hymns";
 import { useFavorites, favId } from "@/lib/favorites";
 
 export const Route = createFileRoute("/")({
@@ -36,10 +37,20 @@ function orderedLanguages() {
 }
 
 function Home() {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [lang, setLang] = useState<string>("Todos");
   const [onlyFavs, setOnlyFavs] = useState(false);
   const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
+
+  const openRandom = () => {
+    const h = randomHymn(lang);
+    navigate({
+      to: "/hino/$language/$number",
+      params: { language: h.language, number: h.number },
+    });
+  };
+
 
   const results = useMemo(() => {
     const base = searchHymns(query, lang);
@@ -82,14 +93,24 @@ function Home() {
           e cante em ecrã grande, com tipografia legível mesmo em luz baixa.
         </p>
 
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
           <Button asChild variant="outline" size="sm" className="rounded-full gap-2 px-4">
             <Link to="/liturgia">
               <ScrollText className="h-4 w-4" />
               Litanias, Salmos e Invocatórias
             </Link>
           </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={openRandom}
+            className="rounded-full gap-2 px-4"
+          >
+            <Shuffle className="h-4 w-4" />
+            Hino aleatório
+          </Button>
         </div>
+
 
         <div className="mt-8 sm:mt-10 max-w-2xl mx-auto space-y-5">
           <div className="relative group">
@@ -157,7 +178,9 @@ function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {visible.map((h) => {
               const fav = isFavorite(h.language, h.number);
-              const preview = h.body.replace(/\s+/g, " ").trim();
+              const flat = h.body.replace(/\s+/g, " ").trim();
+              const snippet = lyricSnippet(h.body, query);
+              const preview = snippet ?? flat.slice(0, 60) + (flat.length > 60 ? "…" : "");
               return (
                 <div
                   key={`${h.language}-${h.number}`}
@@ -172,18 +195,22 @@ function Home() {
                       {h.number}
                     </span>
                     <div className="min-w-0 flex-1">
-                      {h.category && (
-                        <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate">
-                          {h.category}
-                        </p>
-                      )}
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground truncate flex items-center gap-1.5">
+                        <Languages className="h-3 w-3 shrink-0 text-primary/70" />
+                        <span className="truncate">
+                          {h.language}
+                          {h.category ? ` · ${h.category}` : ""}
+                        </span>
+                      </p>
                       <p className="font-display text-lg leading-snug truncate">{h.title}</p>
-                      <p className="text-xs text-muted-foreground line-clamp-1 italic mt-0.5">
-                        {preview.slice(0, 60)}
-                        {preview.length > 60 ? "…" : ""}
+                      <p
+                        className={`text-xs line-clamp-2 italic mt-0.5 ${snippet ? "text-foreground/80" : "text-muted-foreground line-clamp-1"}`}
+                      >
+                        {preview}
                       </p>
                     </div>
                   </Link>
+
                   <button
                     type="button"
                     onClick={(e) => {
@@ -209,10 +236,12 @@ function Home() {
       </footer>
 
       <InstallPrompt />
+      <ScrollTopButton />
 
       <div className="fixed bottom-5 right-5 z-40">
         <NumberPad language={lang} />
       </div>
+
     </div>
   );
 }

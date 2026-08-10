@@ -62,3 +62,22 @@ function openWhatsApp(text: string) {
   const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
   if (typeof window !== "undefined") window.open(url, "_blank", "noopener,noreferrer");
 }
+
+export function randomHymn(language?: string): Hymn {
+  const list =
+    language && language !== "Todos" ? HYMNS.filter((h) => h.language === language) : HYMNS;
+  const pool = list.length ? list : HYMNS;
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+/** Devolve um pequeno trecho da letra à volta da expressão pesquisada. */
+export function lyricSnippet(body: string, query: string, radius = 45): string | null {
+  const q = query.trim().toLowerCase();
+  if (q.length < 3) return null;
+  const flat = body.replace(/\s+/g, " ").trim();
+  const idx = flat.toLowerCase().indexOf(q);
+  if (idx === -1) return null;
+  const start = Math.max(0, idx - radius);
+  const end = Math.min(flat.length, idx + q.length + radius);
+  return (start > 0 ? "…" : "") + flat.slice(start, end).trim() + (end < flat.length ? "…" : "");
+}

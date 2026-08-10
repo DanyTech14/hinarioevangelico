@@ -1,10 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, Star, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { HYMNS, findHymn, shareHymn } from "@/lib/hymns";
 import { useFavorites } from "@/lib/favorites";
+import { ScrollTopButton } from "@/components/ScrollTopButton";
 
 export const Route = createFileRoute("/hino/$language/$number")({
   loader: ({ params }) => {
@@ -153,8 +154,14 @@ function HymnPage() {
             <div className="h-12 w-px bg-border" />
             <h1 className="font-display text-2xl md:text-3xl text-left">{hymn.title}</h1>
           </div>
-          <p className="text-xs text-muted-foreground mt-3">{hymn.language}</p>
+          <div className="mt-4 flex justify-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              <Languages className="h-3.5 w-3.5 text-primary" />
+              {hymn.language}
+            </span>
+          </div>
         </div>
+
 
         <article
           className="font-display leading-relaxed text-foreground space-y-6 text-balance"
@@ -164,10 +171,10 @@ function HymnPage() {
             st.kind === "chorus" ? (
               <div
                 key={i}
-                className="relative italic rounded-r-lg border-l-4 border-primary bg-primary/5 pl-5 pr-3 py-3 -ml-2"
+                className="relative italic rounded-r-lg border-l-4 border-chorus bg-chorus/10 pl-5 pr-3 py-3 -ml-2"
               >
                 <span
-                  className="block uppercase tracking-[0.25em] font-sans not-italic font-semibold text-primary mb-2"
+                  className="block uppercase tracking-[0.25em] font-sans not-italic font-semibold text-chorus-foreground mb-2"
                   style={{ fontSize: `${Math.max(11, size * 0.45)}px` }}
                 >
                   Coro
@@ -229,7 +236,9 @@ function HymnPage() {
           )}
         </nav>
       </main>
+      <ScrollTopButton />
     </div>
+
   );
 }
 
