@@ -29,6 +29,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-chorus: var(--chorus);
+  --color-chorus-foreground: var(--chorus-foreground);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Karla", system-ui, sans-serif;
 }
@@ -55,6 +57,8 @@
   --border: #e3d9cb;
   --input: #e3d9cb;
   --ring: #c9b99a;
+  --chorus: #6f8f6a;
+  --chorus-foreground: #3f5a3b;
 }
 
 .dark {
@@ -78,6 +82,8 @@
   --border: #3a3530;
   --input: #3a3530;
   --ring: #c9a84c;
+  --chorus: #8fb98a;
+  --chorus-foreground: #b6d6b1;
 }
 
 @layer base {
