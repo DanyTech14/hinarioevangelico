@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { HYMNS, findHymn, shareHymn } from "@/lib/hymns";
 import { useFavorites } from "@/lib/favorites";
+import { ScrollTopButton } from "@/components/ScrollTopButton";
 
 export const Route = createFileRoute("/hino/$language/$number")({
   loader: ({ params }) => {
