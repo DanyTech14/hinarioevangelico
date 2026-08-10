@@ -154,8 +154,14 @@ function HymnPage() {
             <div className="h-12 w-px bg-border" />
             <h1 className="font-display text-2xl md:text-3xl text-left">{hymn.title}</h1>
           </div>
-          <p className="text-xs text-muted-foreground mt-3">{hymn.language}</p>
+          <div className="mt-4 flex justify-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              <Languages className="h-3.5 w-3.5 text-primary" />
+              {hymn.language}
+            </span>
+          </div>
         </div>
+
 
         <article
           className="font-display leading-relaxed text-foreground space-y-6 text-balance"
