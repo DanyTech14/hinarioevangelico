@@ -171,10 +171,10 @@ function HymnPage() {
             st.kind === "chorus" ? (
               <div
                 key={i}
-                className="relative italic rounded-r-lg border-l-4 border-primary bg-primary/5 pl-5 pr-3 py-3 -ml-2"
+                className="relative italic rounded-r-lg border-l-4 border-chorus bg-chorus/10 pl-5 pr-3 py-3 -ml-2"
               >
                 <span
-                  className="block uppercase tracking-[0.25em] font-sans not-italic font-semibold text-primary mb-2"
+                  className="block uppercase tracking-[0.25em] font-sans not-italic font-semibold text-chorus-foreground mb-2"
                   style={{ fontSize: `${Math.max(11, size * 0.45)}px` }}
                 >
                   Coro
