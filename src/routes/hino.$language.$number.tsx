@@ -236,7 +236,9 @@ function HymnPage() {
           )}
         </nav>
       </main>
+      <ScrollTopButton />
     </div>
+
   );
 }
 
