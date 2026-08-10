@@ -1,12 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Search, BookOpen, Music, Star, ScrollText } from "lucide-react";
+import { Search, BookOpen, Music, Star, ScrollText, Shuffle, Languages } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { InstallPrompt } from "@/components/InstallPrompt";
 import { NumberPad } from "@/components/NumberPad";
-import { HYMNS, LANGUAGES, searchHymns } from "@/lib/hymns";
+import { ScrollTopButton } from "@/components/ScrollTopButton";
+import { HYMNS, LANGUAGES, searchHymns, randomHymn, lyricSnippet } from "@/lib/hymns";
 import { useFavorites, favId } from "@/lib/favorites";
 
 export const Route = createFileRoute("/")({
