@@ -1,9 +1,10 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Minus, Plus, Maximize2, Minimize2, Home, Share2, Star, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { HYMNS, findHymn, shareHymn } from "@/lib/hymns";
+import { HYMNS, findHymn } from "@/lib/hymns";
+import { parseStanzas } from "@/lib/stanzas";
 import { useFavorites } from "@/lib/favorites";
 import { ScrollTopButton } from "@/components/ScrollTopButton";
 
@@ -40,6 +41,7 @@ export const Route = createFileRoute("/hino/$language/$number")({
 
 function HymnPage() {
   const { hymn } = Route.useLoaderData();
+  const navigate = useNavigate();
   const [size, setSize] = useState<number>(() => {
     if (typeof window === "undefined") return 28;
     const v = localStorage.getItem("hymn-size");
@@ -109,8 +111,13 @@ function HymnPage() {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareHymn(hymn)}
-                aria-label="Partilhar no WhatsApp"
+                onClick={() =>
+                  navigate({
+                    to: "/partilhar/$language/$number",
+                    params: { language: hymn.language, number: hymn.number },
+                  })
+                }
+                aria-label="Partilhar hino"
                 className="ml-1 gap-1.5 rounded-xl"
               >
                 <Share2 className="h-4 w-4" /> <span className="hidden sm:inline">Partilhar</span>
@@ -240,40 +247,4 @@ function HymnPage() {
     </div>
 
   );
-}
-
-export type Stanza = {
-  kind: "verse" | "chorus";
-  number: string | null;
-  lines: string[];
-};
-
-export function parseStanzas(body: string): Stanza[] {
-  const lines = body.split("\n");
-  const stanzas: Stanza[] = [];
-  let current: Stanza | null = null;
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (!line) {
-      if (current && current.lines.length) {
-        stanzas.push(current);
-        current = null;
-      }
-      continue;
-    }
-    const chorus = /^coro\s*:?\s*(.*)$/i.exec(line);
-    const m = /^(\d+)\.\s*(.*)$/.exec(line);
-    if (chorus) {
-      if (current) stanzas.push(current);
-      current = { kind: "chorus", number: null, lines: chorus[1] ? [chorus[1]] : [] };
-    } else if (m) {
-      if (current) stanzas.push(current);
-      current = { kind: "verse", number: m[1], lines: m[2] ? [m[2]] : [] };
-    } else {
-      if (!current) current = { kind: "verse", number: null, lines: [] };
-      current.lines.push(line);
-    }
-  }
-  if (current) stanzas.push(current);
-  return stanzas;
 }

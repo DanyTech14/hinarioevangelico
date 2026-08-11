@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LiturgiaIndexRouteImport } from './routes/liturgia.index'
 import { Route as LiturgiaIdRouteImport } from './routes/liturgia.$id'
 import { Route as HinoLanguageNumberRouteImport } from './routes/hino.$language.$number'
+import { Route as PartilharLanguageNumberRouteImport } from './routes/partilhar.$language.$number'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const HinoLanguageNumberRoute = HinoLanguageNumberRouteImport.update({
   path: '/hino/$language/$number',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PartilharLanguageNumberRoute = PartilharLanguageNumberRouteImport.update({
+  id: '/partilhar/$language/$number',
+  path: '/partilhar/$language/$number',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/liturgia/$id': typeof LiturgiaIdRoute
   '/liturgia/': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
+  '/partilhar/$language/$number': typeof PartilharLanguageNumberRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/liturgia/$id': typeof LiturgiaIdRoute
   '/liturgia': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
+  '/partilhar/$language/$number': typeof PartilharLanguageNumberRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,18 +61,30 @@ export interface FileRoutesById {
   '/liturgia/$id': typeof LiturgiaIdRoute
   '/liturgia/': typeof LiturgiaIndexRoute
   '/hino/$language/$number': typeof HinoLanguageNumberRoute
+  '/partilhar/$language/$number': typeof PartilharLanguageNumberRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/liturgia/$id' | '/liturgia/' | '/hino/$language/$number'
+  fullPaths:
+    | '/'
+    | '/liturgia/$id'
+    | '/liturgia/'
+    | '/hino/$language/$number'
+    | '/partilhar/$language/$number'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/liturgia/$id' | '/liturgia' | '/hino/$language/$number'
+  to:
+    | '/'
+    | '/liturgia/$id'
+    | '/liturgia'
+    | '/hino/$language/$number'
+    | '/partilhar/$language/$number'
   id:
     | '__root__'
     | '/'
     | '/liturgia/$id'
     | '/liturgia/'
     | '/hino/$language/$number'
+    | '/partilhar/$language/$number'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -72,6 +92,7 @@ export interface RootRouteChildren {
   LiturgiaIdRoute: typeof LiturgiaIdRoute
   LiturgiaIndexRoute: typeof LiturgiaIndexRoute
   HinoLanguageNumberRoute: typeof HinoLanguageNumberRoute
+  PartilharLanguageNumberRoute: typeof PartilharLanguageNumberRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -104,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HinoLanguageNumberRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/partilhar/$language/$number': {
+      id: '/partilhar/$language/$number'
+      path: '/partilhar/$language/$number'
+      fullPath: '/partilhar/$language/$number'
+      preLoaderRoute: typeof PartilharLanguageNumberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -112,17 +140,8 @@ const rootRouteChildren: RootRouteChildren = {
   LiturgiaIdRoute: LiturgiaIdRoute,
   LiturgiaIndexRoute: LiturgiaIndexRoute,
   HinoLanguageNumberRoute: HinoLanguageNumberRoute,
+  PartilharLanguageNumberRoute: PartilharLanguageNumberRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
