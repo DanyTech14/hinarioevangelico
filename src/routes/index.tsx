@@ -43,6 +43,17 @@ function Home() {
   const [onlyFavs, setOnlyFavs] = useState(false);
   const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
 
+  // Recupera o idioma escolhido anteriormente
+  useEffect(() => {
+    const saved = localStorage.getItem("hymn-lang");
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("hymn-lang", lang);
+  }, [lang]);
+
+
   const openRandom = () => {
     const h = randomHymn(lang);
     navigate({
