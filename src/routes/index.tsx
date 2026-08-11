@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search, BookOpen, Music, Star, ScrollText, Shuffle, Languages } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -42,6 +42,17 @@ function Home() {
   const [lang, setLang] = useState<string>("Todos");
   const [onlyFavs, setOnlyFavs] = useState(false);
   const { ids: favIds, isFavorite, toggle: toggleFav } = useFavorites();
+
+  // Recupera o idioma escolhido anteriormente
+  useEffect(() => {
+    const saved = localStorage.getItem("hymn-lang");
+    if (saved) setLang(saved);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("hymn-lang", lang);
+  }, [lang]);
+
 
   const openRandom = () => {
     const h = randomHymn(lang);
